@@ -1,9 +1,10 @@
-import FullStackQuizGame from "./components/FullStackQuizGame";
+import { Suspense } from "react";
+import QuizClient from "./QuizClient";
 
 export default function QuizPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center p-4">
-      <FullStackQuizGame />
-    </main>
+    <Suspense fallback={<div className="text-white">Loading quiz...</div>}>
+      <QuizClient />
+    </Suspense>
   );
 }

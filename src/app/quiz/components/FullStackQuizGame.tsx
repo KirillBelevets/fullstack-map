@@ -4,7 +4,11 @@ import { useQuizEngine } from "../hooks/useQuizEngine";
 import FSProgressBar from "./FSProgressBar";
 import FSQuestionCard from "./FSQuestionCard";
 
-export default function FullStackQuizGame() {
+interface FullStackQuizGameProps {
+  topic: string | null;
+}
+
+export default function FullStackQuizGame({ topic }: FullStackQuizGameProps) {
   const {
     level,
     streak,
@@ -14,7 +18,7 @@ export default function FullStackQuizGame() {
     showNext,
     handleAnswer,
     handleNext,
-  } = useQuizEngine();
+  } = useQuizEngine(topic); 
 
   if (!current) {
     return (
