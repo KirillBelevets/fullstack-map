@@ -1406,4 +1406,1012 @@ export const questionsIntermediate: Question[] = [
       "`<div>` elements are block-level by default, meaning they occupy the full width available.",
     tags: ["html", "css", "intermediate"],
   },
+  {
+    prompt: "What is the main purpose of a content delivery network (CDN)?",
+    options: [
+      "Store server logs",
+      "Minify HTML files",
+      "Distribute static content closer to users geographically",
+      "Encrypt backend databases",
+    ],
+    answer: "Distribute static content closer to users geographically",
+    explanation:
+      "A CDN caches and delivers static assets (JS, CSS, images) from edge servers to reduce latency and improve performance.",
+    tags: ["hosting", "cdn", "performance"],
+  },
+  {
+    prompt: "What is the purpose of ARIA roles in web development?",
+    options: [
+      "To define CSS styles for components",
+      "To describe element behavior to assistive technologies",
+      "To manage React component lifecycle",
+      "To improve image compression",
+    ],
+    answer: "To describe element behavior to assistive technologies",
+    explanation:
+      "ARIA roles help define the purpose and state of UI elements for users relying on assistive technologies.",
+    tags: ["a11y", "accessibility", "html"],
+  },
+  {
+    prompt: "Which Git command is used to combine two branches?",
+    options: ["git rebase", "git merge", "git fetch", "git reset"],
+    answer: "git merge",
+    explanation:
+      "`git merge` integrates changes from one branch into another, creating a merge commit if necessary.",
+    tags: ["git"],
+  },
+  {
+    prompt:
+      "What does the 'critical rendering path' refer to in browser performance?",
+    options: [
+      "The order in which CSS files are requested",
+      "The process browsers use to convert HTML, CSS, JS into pixels on screen",
+      "The order of JavaScript execution",
+      "The priority of external API calls",
+    ],
+    answer:
+      "The process browsers use to convert HTML, CSS, JS into pixels on screen",
+    explanation:
+      "The critical rendering path refers to how the browser parses and renders content on the screen (parse HTML → CSSOM → JS → layout → paint).",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What does CSRF stand for in web security?",
+    options: [
+      "Cross-Site Rendering Framework",
+      "Client-Side Random Function",
+      "Cross-Site Request Forgery",
+      "Cross-Site Response Fetching",
+    ],
+    answer: "Cross-Site Request Forgery",
+    explanation:
+      "CSRF is a security vulnerability where an attacker tricks a user into making unwanted requests to another site where they are authenticated.",
+    tags: ["security", "csrf"],
+  },
+  {
+    prompt: "Which HTTP header is used to define allowed origins in CORS?",
+    options: [
+      "Access-Control-Allow-Origin",
+      "Origin-Allow",
+      "Control-Origin",
+      "CORS-Enabled",
+    ],
+    answer: "Access-Control-Allow-Origin",
+    explanation:
+      "`Access-Control-Allow-Origin` specifies which origins are permitted to access resources on the server.",
+    tags: ["network", "http", "cors"],
+  },
+  {
+    prompt: "What is a common SEO benefit of using semantic HTML elements?",
+    options: [
+      "Faster JavaScript execution",
+      "Better cross-browser compatibility",
+      "Improved search engine understanding of page content",
+      "More CSS styling options",
+    ],
+    answer: "Improved search engine understanding of page content",
+    explanation:
+      "Semantic HTML helps search engines better interpret content structure, improving SEO.",
+    tags: ["seo", "html"],
+  },
+  {
+    prompt: "What is the difference between TCP and UDP?",
+    options: [
+      "TCP is unreliable, UDP is reliable",
+      "TCP is connection-oriented, UDP is connectionless",
+      "TCP only supports text, UDP supports binary",
+      "They are the same protocol",
+    ],
+    answer: "TCP is connection-oriented, UDP is connectionless",
+    explanation:
+      "TCP ensures reliable, ordered delivery; UDP is faster but does not guarantee delivery or order.",
+    tags: ["network"],
+  },
+  {
+    prompt: "What is the purpose of a CSP (Content Security Policy)?",
+    options: [
+      "To optimize CSS files",
+      "To restrict which resources (scripts, styles) can be loaded by the page",
+      "To enable HTTPS connections",
+      "To manage API rate limiting",
+    ],
+    answer:
+      "To restrict which resources (scripts, styles) can be loaded by the page",
+    explanation:
+      "A Content Security Policy (CSP) helps prevent XSS and data injection attacks by controlling which resources a page can load.",
+    tags: ["security", "csp"],
+  },
+  {
+    prompt: "In Git, what is the purpose of `git stash`?",
+    options: [
+      "To permanently delete untracked files",
+      "To temporarily save uncommitted changes",
+      "To create a backup branch",
+      "To squash commit history",
+    ],
+    answer: "To temporarily save uncommitted changes",
+    explanation:
+      "`git stash` allows you to temporarily save your local changes so you can switch branches without committing them.",
+    tags: ["git"],
+  },
+  {
+    prompt: "What is the purpose of DNS in networking?",
+    options: [
+      "Encrypt HTTP traffic",
+      "Balance server load",
+      "Resolve domain names to IP addresses",
+      "Secure API tokens",
+    ],
+    answer: "Resolve domain names to IP addresses",
+    explanation:
+      "DNS translates human-readable domain names into IP addresses used by computers to locate each other.",
+    tags: ["network", "dns"],
+  },
+  {
+    prompt:
+      "What is the primary difference between `git pull` and `git fetch`?",
+    options: [
+      "`git pull` only updates remote branches, `git fetch` merges changes",
+      "`git fetch` updates local tracking branches without merging, `git pull` fetches and merges",
+      "`git pull` deletes local changes, `git fetch` does not",
+      "They are identical in behavior",
+    ],
+    answer:
+      "`git fetch` updates local tracking branches without merging, `git pull` fetches and merges",
+    explanation:
+      "`git fetch` retrieves new data from a remote repo without merging; `git pull` does fetch + merge.",
+    tags: ["git"],
+  },
+  {
+    prompt:
+      "Which tool visualizes website performance and identifies bottlenecks?",
+    options: ["Webpack", "Lighthouse", "Jest", "Nodemon"],
+    answer: "Lighthouse",
+    explanation:
+      "Google Lighthouse is a tool for auditing performance, accessibility, SEO, and more.",
+    tags: ["browser", "performance", "seo"],
+  },
+  {
+    prompt: "What does the `defer` attribute on a `<script>` tag do?",
+    options: [
+      "Prevents the script from executing",
+      "Loads the script asynchronously and delays execution until after HTML parsing",
+      "Loads the script synchronously",
+      "Applies CSS styles",
+    ],
+    answer:
+      "Loads the script asynchronously and delays execution until after HTML parsing",
+    explanation:
+      "`defer` allows a script to download in parallel with parsing HTML but defers execution until after the DOM is parsed.",
+    tags: ["html", "browser", "performance"],
+  },
+  {
+    prompt:
+      "What is the main purpose of using serverless functions in hosting?",
+    options: [
+      "To replace CSS files",
+      "To run backend code without managing servers",
+      "To serve static files",
+      "To compile TypeScript",
+    ],
+    answer: "To run backend code without managing servers",
+    explanation:
+      "Serverless functions let developers run backend logic without provisioning or managing infrastructure.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt:
+      "What is a primary accessibility benefit of using native HTML buttons instead of `<div>` or `<span>`?",
+    options: [
+      "They load faster",
+      "They have built-in keyboard and screen reader support",
+      "They require less CSS",
+      "They reduce JavaScript bundle size",
+    ],
+    answer: "They have built-in keyboard and screen reader support",
+    explanation:
+      "Native buttons come with automatic keyboard operability and proper roles for assistive tech.",
+    tags: ["a11y", "html", "accessibility"],
+  },
+  {
+    prompt: "What is the role of `robots.txt` in SEO?",
+    options: [
+      "Specifies meta descriptions for search engines",
+      "Defines canonical URLs",
+      "Provides crawl instructions for search engine bots",
+      "Controls JavaScript execution",
+    ],
+    answer: "Provides crawl instructions for search engine bots",
+    explanation:
+      "`robots.txt` gives directives to web crawlers about which pages should or should not be crawled.",
+    tags: ["seo", "hosting"],
+  },
+  {
+    prompt: "What is an HTTP `Keep-Alive` connection?",
+    options: [
+      "A persistent connection that allows multiple requests on the same connection",
+      "A connection that prevents the server from going idle",
+      "An always-open WebSocket connection",
+      "A VPN tunnel",
+    ],
+    answer:
+      "A persistent connection that allows multiple requests on the same connection",
+    explanation:
+      "`Keep-Alive` enables reusing a single TCP connection for multiple HTTP requests/responses, reducing latency.",
+    tags: ["network", "http"],
+  },
+  {
+    prompt:
+      "Which ARIA attribute communicates the expanded/collapsed state of a toggle control?",
+    options: ["aria-label", "aria-expanded", "aria-pressed", "aria-selected"],
+    answer: "aria-expanded",
+    explanation:
+      "`aria-expanded` indicates whether a control (like an accordion or dropdown) is expanded or collapsed.",
+    tags: ["a11y", "accessibility"],
+  },
+  {
+    prompt: "In React, what is a benefit of using `React.memo()`?",
+    options: [
+      "It prevents component from re-rendering when props haven’t changed",
+      "It adds lifecycle methods",
+      "It enables server-side rendering",
+      "It memoizes hooks",
+    ],
+    answer:
+      "It prevents component from re-rendering when props haven’t changed",
+    explanation:
+      "`React.memo()` optimizes performance by memoizing a component and skipping re-renders if props are unchanged.",
+    tags: ["react", "performance"],
+  },
+  {
+    prompt:
+      "Which CSS property helps prevent text from wrapping to the next line?",
+    options: ["white-space", "overflow", "text-wrap", "word-spacing"],
+    answer: "white-space",
+    explanation:
+      "The `white-space` property controls whether and how text wraps or preserves spacing.",
+    tags: ["css"],
+  },
+  {
+    prompt: "What is the purpose of the `referrer-policy` HTTP header?",
+    options: [
+      "To control what referrer information is sent with requests",
+      "To block CORS requests",
+      "To configure TLS settings",
+      "To prioritize rendering performance",
+    ],
+    answer: "To control what referrer information is sent with requests",
+    explanation:
+      "The `referrer-policy` header controls how much referrer data (URL path) is shared with external sites.",
+    tags: ["security", "http"],
+  },
+  {
+    prompt: "In Git, what does `git cherry-pick` do?",
+    options: [
+      "Deletes a branch",
+      "Merges two branches",
+      "Applies a specific commit from one branch onto another",
+      "Stashes uncommitted changes",
+    ],
+    answer: "Applies a specific commit from one branch onto another",
+    explanation:
+      "`git cherry-pick` allows applying a single commit from one branch to another branch.",
+    tags: ["git"],
+  },
+  {
+    prompt: "What is the purpose of the `prefetch` link relation in HTML?",
+    options: [
+      "To load critical CSS",
+      "To hint the browser to fetch resources that will be used soon",
+      "To prioritize images",
+      "To load fonts inline",
+    ],
+    answer: "To hint the browser to fetch resources that will be used soon",
+    explanation:
+      "`<link rel='prefetch'>` tells the browser to fetch resources that might be needed in the near future.",
+    tags: ["browser", "performance", "html"],
+  },
+  {
+    prompt:
+      "In React, what is the main difference between `useMemo` and `useCallback`?",
+    options: [
+      "`useMemo` memoizes functions, `useCallback` memoizes values",
+      "`useMemo` memoizes values, `useCallback` memoizes functions",
+      "They are identical",
+      "`useCallback` is used for context providers only",
+    ],
+    answer: "`useMemo` memoizes values, `useCallback` memoizes functions",
+    explanation:
+      "`useMemo` stores a memoized value; `useCallback` stores a memoized function reference.",
+    tags: ["react", "hooks", "performance"],
+  },
+  {
+    prompt: "What is the purpose of using HTTP/2 over HTTP/1.1?",
+    options: [
+      "To allow browsers to bypass security checks",
+      "To compress CSS files",
+      "To improve performance via multiplexing and header compression",
+      "To remove the need for TLS",
+    ],
+    answer: "To improve performance via multiplexing and header compression",
+    explanation:
+      "HTTP/2 enables parallel streams over a single connection and compresses headers to improve performance.",
+    tags: ["network", "http"],
+  },
+  {
+    prompt: "In SQL, what does the `HAVING` clause do?",
+    options: [
+      "Filters rows before grouping",
+      "Filters groups after `GROUP BY`",
+      "Sorts rows",
+      "Performs JOIN operations",
+    ],
+    answer: "Filters groups after `GROUP BY`",
+    explanation:
+      "`HAVING` filters aggregated results after `GROUP BY` has grouped the data.",
+    tags: ["sql"],
+  },
+  {
+    prompt: "In the browser rendering pipeline, what is a 'reflow'?",
+    options: [
+      "A repaint of CSS styles only",
+      "A recalculation of the layout of the page",
+      "A memory optimization step",
+      "A network fetch retry",
+    ],
+    answer: "A recalculation of the layout of the page",
+    explanation:
+      "A reflow occurs when changes require recalculating the positions and dimensions of elements.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is the primary security purpose of the Same-Origin Policy?",
+    options: [
+      "To prevent XSS",
+      "To block DNS spoofing",
+      "To restrict how documents or scripts can interact across origins",
+      "To limit API rate usage",
+    ],
+    answer: "To restrict how documents or scripts can interact across origins",
+    explanation:
+      "The Same-Origin Policy prevents documents from one origin from accessing content on another origin, mitigating XSS and CSRF risks.",
+    tags: ["security"],
+  },
+  {
+    prompt: "What does `git reset --soft HEAD~1` do?",
+    options: [
+      "Deletes the last commit and discards changes",
+      "Moves HEAD back one commit but keeps changes staged",
+      "Moves HEAD back one commit and discards staged changes",
+      "Creates a new branch",
+    ],
+    answer: "Moves HEAD back one commit but keeps changes staged",
+    explanation:
+      "`git reset --soft HEAD~1` undoes the last commit but preserves the changes in the staging area.",
+    tags: ["git"],
+  },
+  {
+    prompt: "What is the main purpose of DNS caching?",
+    options: [
+      "To speed up repeated domain lookups",
+      "To encrypt DNS queries",
+      "To block unwanted domains",
+      "To compress HTTP headers",
+    ],
+    answer: "To speed up repeated domain lookups",
+    explanation:
+      "DNS caching stores previous lookup results to avoid repeated requests to DNS servers, improving performance.",
+    tags: ["network", "dns"],
+  },
+  {
+    prompt:
+      "What does `git rebase --interactive` (or `git rebase -i`) allow you to do?",
+    options: [
+      "Interactively edit file contents",
+      "Reorder, squash, or edit commits in a branch",
+      "Resolve merge conflicts automatically",
+      "Clone a repository",
+    ],
+    answer: "Reorder, squash, or edit commits in a branch",
+    explanation:
+      "`git rebase -i` enables interactive editing of the commit history — e.g. to squash, reorder, or edit commits.",
+    tags: ["git"],
+  },
+  {
+    prompt: "What does CSP's `default-src` directive do?",
+    options: [
+      "Specifies fallback behavior for missing resources",
+      "Defines the default set of sources that can be loaded",
+      "Disables caching for critical resources",
+      "Enables cross-origin requests",
+    ],
+    answer: "Defines the default set of sources that can be loaded",
+    explanation:
+      "CSP's `default-src` directive sets the baseline policy for loading resources (scripts, styles, images, etc.).",
+    tags: ["security", "csp"],
+  },
+  {
+    prompt: "What is the main goal of serverless architecture?",
+    options: [
+      "To replace frontend frameworks",
+      "To move all logic to the client",
+      "To run code on-demand without managing servers",
+      "To disable TLS requirements",
+    ],
+    answer: "To run code on-demand without managing servers",
+    explanation:
+      "Serverless architecture lets developers deploy functions that scale automatically without managing server infrastructure.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "What does the `dns-prefetch` hint do?",
+    options: [
+      "Preloads fonts",
+      "Instructs the browser to resolve DNS for a domain early",
+      "Caches HTTP headers",
+      "Prefetches page content",
+    ],
+    answer: "Instructs the browser to resolve DNS for a domain early",
+    explanation:
+      "`dns-prefetch` lets the browser perform DNS resolution for an external domain early, improving perceived performance.",
+    tags: ["browser", "performance", "dns"],
+  },
+  {
+    prompt: "Which ARIA attribute describes the current state of a tab?",
+    options: ["aria-pressed", "aria-checked", "aria-selected", "aria-expanded"],
+    answer: "aria-selected",
+    explanation:
+      "`aria-selected` indicates whether an item in a set (such as a tab) is selected.",
+    tags: ["a11y", "accessibility"],
+  },
+  {
+    prompt:
+      "What does the `integrity` attribute in a `<script>` or `<link>` tag do?",
+    options: [
+      "Specifies the character encoding",
+      "Validates that the fetched resource matches a known hash",
+      "Specifies CORS policies",
+      "Defines fallback resources",
+    ],
+    answer: "Validates that the fetched resource matches a known hash",
+    explanation:
+      "The `integrity` attribute provides Subresource Integrity (SRI), ensuring that the resource hasn't been tampered with.",
+    tags: ["security"],
+  },
+  {
+    prompt: "In SQL, what is a 'composite primary key'?",
+    options: [
+      "A primary key with a foreign key constraint",
+      "A primary key composed of multiple columns",
+      "A key that is auto-incremented",
+      "A key used only for indexing",
+    ],
+    answer: "A primary key composed of multiple columns",
+    explanation:
+      "A composite primary key uses two or more columns to uniquely identify each row.",
+    tags: ["sql"],
+  },
+  {
+    prompt: "What is the purpose of a CSRF token?",
+    options: [
+      "To encrypt session data",
+      "To authenticate the client",
+      "To ensure that requests are made intentionally by the user",
+      "To replace CAPTCHA challenges",
+    ],
+    answer: "To ensure that requests are made intentionally by the user",
+    explanation:
+      "A CSRF token ensures that requests (like form submissions) are intentionally made by the user and not forged by attackers.",
+    tags: ["security", "csrf"],
+  },
+  {
+    prompt: "What is a benefit of HTTP caching?",
+    options: [
+      "Reduces server CPU usage by compressing responses",
+      "Allows faster subsequent page loads",
+      "Encrypts HTTP responses",
+      "Ensures all resources are always up-to-date",
+    ],
+    answer: "Allows faster subsequent page loads",
+    explanation:
+      "HTTP caching reduces latency and bandwidth usage by serving cached content when appropriate.",
+    tags: ["network", "http", "performance"],
+  },
+  {
+    prompt: "What is 'layout thrashing' in the browser rendering pipeline?",
+    options: [
+      "When a page uses too many layout grids",
+      "When frequent DOM reads/writes cause forced synchronous reflows",
+      "When too many CSS animations are used",
+      "When fonts are reloaded on each frame",
+    ],
+    answer: "When frequent DOM reads/writes cause forced synchronous reflows",
+    explanation:
+      "Layout thrashing happens when JS alternates DOM reads and writes, causing repeated reflows and performance hits.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt:
+      "Which browser API allows scheduling a low-priority background task?",
+    options: [
+      "requestIdleCallback",
+      "setTimeout",
+      "requestAnimationFrame",
+      "setInterval",
+    ],
+    answer: "requestIdleCallback",
+    explanation:
+      "`requestIdleCallback` allows scheduling background work during browser idle time.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What does a CDN typically cache?",
+    options: [
+      "Dynamic API responses",
+      "Server logs",
+      "Static assets like images, CSS, JS",
+      "Database queries",
+    ],
+    answer: "Static assets like images, CSS, JS",
+    explanation:
+      "A CDN caches static content such as images, CSS, JS files to reduce latency and bandwidth.",
+    tags: ["hosting", "cdn"],
+  },
+  {
+    prompt: "What is a cold start in serverless functions?",
+    options: [
+      "When the server has no power",
+      "When the client first connects to a serverless function and it must be initialized",
+      "When the database is empty",
+      "When HTTPS is not used",
+    ],
+    answer:
+      "When the client first connects to a serverless function and it must be initialized",
+    explanation:
+      "Cold start refers to the delay when a serverless function is first invoked and needs to be initialized.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "Which DNS record maps a domain name to an IP address?",
+    options: ["MX record", "TXT record", "CNAME record", "A record"],
+    answer: "A record",
+    explanation:
+      "An A record (Address record) maps a domain to an IPv4 address.",
+    tags: ["hosting", "dns"],
+  },
+  {
+    prompt: "Which SQL clause is used to filter rows before aggregation?",
+    options: ["HAVING", "GROUP BY", "WHERE", "ORDER BY"],
+    answer: "WHERE",
+    explanation:
+      "`WHERE` filters rows before `GROUP BY` or `HAVING` clauses are applied.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "What is database normalization?",
+    options: [
+      "A process to denormalize tables for faster access",
+      "A process to reduce data redundancy and improve data integrity",
+      "A type of data encryption",
+      "A method to cache SQL queries",
+    ],
+    answer: "A process to reduce data redundancy and improve data integrity",
+    explanation:
+      "Normalization structures a database to minimize redundancy and ensure logical data relationships.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "What is the main purpose of Webpack's 'tree shaking' feature?",
+    options: [
+      "To sort JavaScript files",
+      "To minify CSS files",
+      "To remove unused code from final bundle",
+      "To optimize image loading",
+    ],
+    answer: "To remove unused code from final bundle",
+    explanation:
+      "Tree shaking eliminates dead (unused) code from bundles, reducing file size.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "Which ESLint rule category helps enforce consistent code style?",
+    options: [
+      "Best Practices",
+      "Stylistic Issues",
+      "Possible Errors",
+      "Node.js and CommonJS",
+    ],
+    answer: "Stylistic Issues",
+    explanation:
+      "`Stylistic Issues` rules help enforce consistent spacing, indentation, quote style, etc.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "In npm, what is a 'devDependency'?",
+    options: [
+      "A dependency required only for development, not in production builds",
+      "A dependency used only on the server",
+      "A dependency for older browsers",
+      "A dependency used by React components",
+    ],
+    answer:
+      "A dependency required only for development, not in production builds",
+    explanation:
+      "`devDependencies` are packages needed only during development (e.g. testing, linting, bundling), not in production.",
+    tags: ["tools", "npm"],
+  },
+  {
+    prompt:
+      "Which CSS property can help reduce paint time by promoting an element to its own layer?",
+    options: ["will-change", "transform-origin", "contain", "clip-path"],
+    answer: "will-change",
+    explanation:
+      "`will-change` hints to the browser that an element will change, so it can optimize performance (e.g., promote it to a new layer).",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is a TTL (Time To Live) value in DNS?",
+    options: [
+      "The maximum size of DNS packet",
+      "How long a DNS record is cached before expiring",
+      "A timeout for HTTP requests",
+      "The expiration time of SSL certificates",
+    ],
+    answer: "How long a DNS record is cached before expiring",
+    explanation:
+      "TTL defines how long a DNS resolver caches a record before querying it again.",
+    tags: ["hosting", "dns"],
+  },
+  {
+    prompt: "Which SQL index type is best for full-text search?",
+    options: ["B-tree", "Full-text", "Hash", "Spatial"],
+    answer: "Full-text",
+    explanation:
+      "Full-text indexes allow efficient searching of text content in large databases.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "In npm, what is the effect of using `--save-exact`?",
+    options: [
+      "Installs only exact versions of dependencies, not ranges",
+      "Installs globally",
+      "Enables peerDependencies",
+      "Removes duplicate dependencies",
+    ],
+    answer: "Installs only exact versions of dependencies, not ranges",
+    explanation:
+      "`--save-exact` forces npm to save the exact version of a dependency without a version range (^ or ~).",
+    tags: ["tools", "npm"],
+  },
+  {
+    prompt: "What is 'lazy loading' in the context of images?",
+    options: [
+      "Preloads all images at once",
+      "Loads images only when they are about to enter the viewport",
+      "Compresses images on the fly",
+      "Loads images first before HTML and CSS",
+    ],
+    answer: "Loads images only when they are about to enter the viewport",
+    explanation:
+      "Lazy loading defers loading images until they are needed (e.g. when scrolling), improving page performance.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is an origin server in the context of a CDN?",
+    options: [
+      "A server that generates SSL certificates",
+      "A server that stores the original version of content served through a CDN",
+      "A DNS root server",
+      "A JavaScript microservice",
+    ],
+    answer:
+      "A server that stores the original version of content served through a CDN",
+    explanation:
+      "The origin server holds the source content that the CDN pulls from and caches at edge locations.",
+    tags: ["hosting", "cdn"],
+  },
+  {
+    prompt: "Which SQL statement is used to modify existing table structures?",
+    options: ["UPDATE", "ALTER TABLE", "INSERT", "RENAME"],
+    answer: "ALTER TABLE",
+    explanation:
+      "`ALTER TABLE` modifies the structure of an existing table, such as adding or dropping columns.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "What does Webpack's `code splitting` feature enable?",
+    options: [
+      "Running JS in separate threads",
+      "Splitting large JS bundles into smaller chunks that can be loaded on demand",
+      "Building CSS separately from JS",
+      "Using multiple Webpack config files",
+    ],
+    answer:
+      "Splitting large JS bundles into smaller chunks that can be loaded on demand",
+    explanation:
+      "Code splitting helps improve page load times by loading only the necessary JS for the current page.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "In ESLint, what is the purpose of a 'plugin'?",
+    options: [
+      "It adds new linting rules or extends existing functionality",
+      "It installs npm dependencies",
+      "It formats HTML",
+      "It manages Git hooks",
+    ],
+    answer: "It adds new linting rules or extends existing functionality",
+    explanation:
+      "ESLint plugins provide additional rules, processors, or configurations for specific frameworks or languages.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "Which type of cache is managed by the browser for HTTP responses?",
+    options: [
+      "Service worker cache",
+      "LocalStorage",
+      "Memory cache",
+      "Disk cache",
+    ],
+    answer: "Disk cache",
+    explanation:
+      "The browser stores HTTP responses in a disk cache to persist them across sessions and improve load times.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "Which browser API allows scheduling visual updates?",
+    options: [
+      "setTimeout",
+      "requestIdleCallback",
+      "requestAnimationFrame",
+      "MutationObserver",
+    ],
+    answer: "requestAnimationFrame",
+    explanation:
+      "`requestAnimationFrame` schedules a function to run before the next repaint, optimized for visual updates.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is the primary purpose of a reverse proxy in hosting?",
+    options: [
+      "To cache API responses",
+      "To forward client requests to backend servers and provide load balancing",
+      "To monitor network traffic",
+      "To serve static files from memory",
+    ],
+    answer:
+      "To forward client requests to backend servers and provide load balancing",
+    explanation:
+      "A reverse proxy forwards client requests to backend servers, often handling load balancing, caching, and SSL termination.",
+    tags: ["hosting"],
+  },
+  {
+    prompt: "In SQL, what is the purpose of the `UNION` operator?",
+    options: [
+      "To combine rows from two tables without duplicates",
+      "To merge columns of two tables",
+      "To sort query results",
+      "To apply aggregate functions",
+    ],
+    answer: "To combine rows from two tables without duplicates",
+    explanation:
+      "`UNION` combines result sets from multiple SELECT statements and removes duplicates.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "In Webpack, what is the role of a 'loader'?",
+    options: [
+      "It adds HTML polyfills",
+      "It transforms files before they are bundled",
+      "It starts the dev server",
+      "It compresses output files",
+    ],
+    answer: "It transforms files before they are bundled",
+    explanation:
+      "Loaders transform files (e.g. transpiling JS, compiling SASS) before Webpack bundles them.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt:
+      "Which HTTP header helps browsers decide whether to serve a cached resource?",
+    options: [
+      "ETag",
+      "Content-Length",
+      "X-Frame-Options",
+      "Strict-Transport-Security",
+    ],
+    answer: "ETag",
+    explanation:
+      "`ETag` is a unique identifier for a resource version. Browsers use it to determine if cached content is still valid.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What does an `MX` DNS record define?",
+    options: [
+      "The main server for the website",
+      "The email server responsible for accepting email messages",
+      "The SSL certificate authority",
+      "The origin server for the CDN",
+    ],
+    answer: "The email server responsible for accepting email messages",
+    explanation:
+      "An `MX` (Mail Exchange) record specifies the email server for a domain.",
+    tags: ["hosting", "dns"],
+  },
+  {
+    prompt: "Which SQL clause allows sorting of query results?",
+    options: ["GROUP BY", "HAVING", "ORDER BY", "DISTINCT"],
+    answer: "ORDER BY",
+    explanation:
+      "`ORDER BY` sorts the results returned by a query in ascending or descending order.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "In npm, what is the purpose of a 'peer dependency'?",
+    options: [
+      "A dependency that will be bundled automatically",
+      "A dependency that must be installed manually in the host project",
+      "A dependency used for testing only",
+      "A dependency shared between dev and prod",
+    ],
+    answer: "A dependency that must be installed manually in the host project",
+    explanation:
+      "Peer dependencies are not automatically installed — the consuming project must provide the required version.",
+    tags: ["tools", "npm"],
+  },
+  {
+    prompt:
+      "What is the main role of the 'content-hash' in a file name during build?",
+    options: [
+      "To make files smaller",
+      "To track file ownership",
+      "To enable long-term caching by uniquely identifying file content",
+      "To compress images",
+    ],
+    answer: "To enable long-term caching by uniquely identifying file content",
+    explanation:
+      "Content hashes in filenames let browsers cache files efficiently and invalidate the cache when content changes.",
+    tags: ["tools", "build"],
+  },
+  {
+    prompt: "What happens during browser 'painting' phase?",
+    options: [
+      "JavaScript code is executed",
+      "DOM is built from HTML",
+      "CSS is parsed into a tree",
+      "Pixels are drawn to the screen based on computed styles and layout",
+    ],
+    answer:
+      "Pixels are drawn to the screen based on computed styles and layout",
+    explanation:
+      "In the painting phase, the browser draws visual parts of elements to the screen based on style and layout.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What does the `preconnect` link relation do?",
+    options: [
+      "It loads fonts asynchronously",
+      "It tells the browser to establish early connections to a domain",
+      "It compresses images",
+      "It preloads JavaScript files",
+    ],
+    answer: "It tells the browser to establish early connections to a domain",
+    explanation:
+      "`preconnect` allows the browser to set up early connections (DNS, TCP, TLS) to a domain, improving load performance.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is a typical use case for a CNAME DNS record?",
+    options: [
+      "To map a domain to an IP address",
+      "To alias one domain name to another",
+      "To specify the mail server",
+      "To define TXT records for verification",
+    ],
+    answer: "To alias one domain name to another",
+    explanation:
+      "A CNAME record maps one domain name to another (canonical name), often used for subdomains or external services.",
+    tags: ["hosting", "dns"],
+  },
+  {
+    prompt: "What does the SQL `DISTINCT` keyword do?",
+    options: [
+      "Sorts rows in descending order",
+      "Removes duplicate rows from the result set",
+      "Creates a primary key",
+      "Filters rows based on conditions",
+    ],
+    answer: "Removes duplicate rows from the result set",
+    explanation:
+      "`DISTINCT` ensures that only unique rows are returned in the result set.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "In npm, what does `npm ci` do?",
+    options: [
+      "Installs dependencies and updates package.json",
+      "Performs a clean install based on package-lock.json",
+      "Checks for peer dependency mismatches",
+      "Compiles JavaScript code",
+    ],
+    answer: "Performs a clean install based on package-lock.json",
+    explanation:
+      "`npm ci` installs dependencies exactly as specified in package-lock.json, useful for reproducible builds in CI environments.",
+    tags: ["tools", "npm"],
+  },
+  {
+    prompt: "What happens during the browser 'compositing' phase?",
+    options: [
+      "DOM tree is constructed",
+      "Elements are painted to offscreen buffers and combined into the final image",
+      "JavaScript is parsed",
+      "HTML is tokenized",
+    ],
+    answer:
+      "Elements are painted to offscreen buffers and combined into the final image",
+    explanation:
+      "Compositing takes painted layers and combines them into the final image that appears on the screen.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is the purpose of an `AAAA` DNS record?",
+    options: [
+      "It maps a domain name to an IPv6 address",
+      "It defines the email server",
+      "It stores text information",
+      "It maps a domain name to a service endpoint",
+    ],
+    answer: "It maps a domain name to an IPv6 address",
+    explanation:
+      "An `AAAA` record maps a domain to an IPv6 address, similar to how an `A` record maps to IPv4.",
+    tags: ["hosting", "dns"],
+  },
+  {
+    prompt:
+      "Which SQL keyword is used to combine result sets and include all rows (duplicates allowed)?",
+    options: ["JOIN", "UNION ALL", "INTERSECT", "GROUP BY"],
+    answer: "UNION ALL",
+    explanation:
+      "`UNION ALL` combines result sets from multiple SELECT statements and retains duplicate rows.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "In Webpack, what is a 'plugin'?",
+    options: [
+      "A function that modifies CSS styles",
+      "A tool that performs a wider range of build tasks beyond loaders",
+      "A library for polyfills",
+      "A dependency injection tool",
+    ],
+    answer: "A tool that performs a wider range of build tasks beyond loaders",
+    explanation:
+      "Webpack plugins can hook into the build process to perform tasks such as minification, asset management, and more.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the `Cache-Control: no-store` directive do?",
+    options: [
+      "Prevents caching of the resource entirely",
+      "Allows caching for 1 day",
+      "Forces caching in service worker",
+      "Requires ETag validation",
+    ],
+    answer: "Prevents caching of the resource entirely",
+    explanation:
+      "`Cache-Control: no-store` ensures that the resource is not cached anywhere, enhancing privacy and security.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "What is the main purpose of Webpack's 'mode' option?",
+    options: [
+      "To configure Babel presets",
+      "To specify the target browser",
+      "To switch between development and production optimizations",
+      "To enable TypeScript support",
+    ],
+    answer: "To switch between development and production optimizations",
+    explanation:
+      "Webpack's `mode` option toggles between development (faster builds, source maps) and production (minified output, optimizations).",
+    tags: ["tools", "webpack", "build"],
+  },
 ];

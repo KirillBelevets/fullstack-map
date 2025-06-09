@@ -35,10 +35,6 @@ export default function TopicLandingPage() {
     <main className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white p-8">
       <DarkModeToggle />
 
-      <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
-        Explore Topics
-      </h1>
-
       <div className="flex flex-col sm:flex-row sm:space-x-4 mb-8 space-y-4 sm:space-y-0">
         <Link
           href="/interview-visualizer"
@@ -58,6 +54,10 @@ export default function TopicLandingPage() {
           🔁 Start Full Quiz
         </button>
       </div>
+
+      <h1 className="text-2xl font-bold mb-4 sm:mb-6 text-black dark:text-white">
+        Explore Topics
+      </h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {topics.map((topic) => {

@@ -6481,4 +6481,1905 @@ export const questionsAdvanced: Question[] = [
       "Memoization improves performance by storing the results of expensive function calls and returning the cached result when the same inputs occur again.",
     tags: ["javascript", "optimization", "memoization"],
   },
+  {
+    prompt:
+      "What is 'first contentful paint' (FCP) in browser performance metrics?",
+    options: [
+      "The time it takes to fully load the page",
+      "The time when the first text or image is rendered",
+      "The time the DOMContentLoaded event fires",
+      "The time when JavaScript execution begins",
+    ],
+    answer: "The time when the first text or image is rendered",
+    explanation:
+      "First Contentful Paint measures when the browser first renders any content from the DOM (text, image, canvas).",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt:
+      "In serverless architecture, what is a common limitation regarding function execution?",
+    options: [
+      "Lack of support for HTTP requests",
+      "Maximum execution time per function invocation",
+      "No database connectivity allowed",
+      "Functions cannot return responses",
+    ],
+    answer: "Maximum execution time per function invocation",
+    explanation:
+      "Serverless functions typically have a maximum execution timeout after which they are forcefully terminated.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "In SQL, what is an index 'fill factor'?",
+    options: [
+      "A factor that controls the size of the transaction log",
+      "A parameter that controls how full each page of the index is when created",
+      "A multiplier for the database growth rate",
+      "A threshold for query cache invalidation",
+    ],
+    answer:
+      "A parameter that controls how full each page of the index is when created",
+    explanation:
+      "Fill factor determines the percentage of space on each index page to leave empty during index creation to accommodate future growth.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt: "What is 'tree shaking' in modern JavaScript bundlers?",
+    options: [
+      "A process of removing unused CSS",
+      "A process of minifying HTML",
+      "A process of removing unused JavaScript exports from final bundles",
+      "A process of reducing DOM node depth",
+    ],
+    answer:
+      "A process of removing unused JavaScript exports from final bundles",
+    explanation:
+      "Tree shaking removes unused exports from JavaScript modules to reduce bundle size and improve performance.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt:
+      "What is the 'Largest Contentful Paint' (LCP) metric designed to measure?",
+    options: [
+      "Total time to load all images",
+      "Time taken to render the largest visible content element",
+      "Time taken for the first API call to complete",
+      "Total time to load CSS and JavaScript",
+    ],
+    answer: "Time taken to render the largest visible content element",
+    explanation:
+      "LCP measures when the largest visible content element (such as an image or block of text) is rendered to the screen.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "Which browser API is used to observe changes to the DOM tree?",
+    options: [
+      "DOMParser",
+      "MutationObserver",
+      "IntersectionObserver",
+      "ResizeObserver",
+    ],
+    answer: "MutationObserver",
+    explanation:
+      "`MutationObserver` allows developers to react to DOM changes such as added or removed nodes or attribute modifications.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt:
+      "In serverless architectures, what is the main reason to avoid cold starts?",
+    options: [
+      "They increase server costs",
+      "They can introduce latency for the first user request",
+      "They block concurrent requests",
+      "They increase database read locks",
+    ],
+    answer: "They can introduce latency for the first user request",
+    explanation:
+      "A cold start requires the serverless platform to initialize the function container, which can add noticeable latency to the first request.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt:
+      "In SQL, what is the main difference between a clustered and a non-clustered index?",
+    options: [
+      "Clustered index allows duplicate rows, non-clustered does not",
+      "Clustered index stores data in the index order, non-clustered uses a separate structure",
+      "Non-clustered index allows faster inserts",
+      "There is no difference",
+    ],
+    answer:
+      "Clustered index stores data in the index order, non-clustered uses a separate structure",
+    explanation:
+      "A clustered index defines the physical order of rows in the table. A non-clustered index stores pointers to the actual data rows.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt:
+      "Which Webpack optimization feature helps reduce bundle duplication when using shared libraries?",
+    options: [
+      "Tree shaking",
+      "Code splitting",
+      "Source maps",
+      "Bundle analyzer",
+    ],
+    answer: "Code splitting",
+    explanation:
+      "Code splitting allows large shared libraries to be separated into their own chunks, reducing duplication across bundles.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt:
+      "What is the purpose of the 'Content-Security-Policy' (CSP) HTTP header?",
+    options: [
+      "To define the maximum cache age for resources",
+      "To enforce stricter type checking",
+      "To prevent Cross-Site Scripting (XSS) and control allowed content sources",
+      "To force HTTPS connections",
+    ],
+    answer:
+      "To prevent Cross-Site Scripting (XSS) and control allowed content sources",
+    explanation:
+      "CSP is a security feature that allows developers to control which content sources are permitted on a page, helping mitigate XSS attacks.",
+    tags: ["browser", "performance", "security"],
+  },
+  {
+    prompt: "What is a critical rendering path in a browser?",
+    options: [
+      "The sequence of API calls to the server",
+      "The set of steps the browser takes to convert HTML, CSS, and JS into pixels on screen",
+      "The sequence of database queries for rendering dynamic pages",
+      "The routing logic used to determine the page URL",
+    ],
+    answer:
+      "The set of steps the browser takes to convert HTML, CSS, and JS into pixels on screen",
+    explanation:
+      "The critical rendering path is the process that converts HTML, CSS, and JavaScript into rendered pixels on the screen.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt: "In modern hosting, what is an 'edge function'?",
+    options: [
+      "A function that runs in the origin server only",
+      "A serverless function that runs at edge locations closer to the user",
+      "A function that requires dedicated servers",
+      "A middleware that rewrites URLs",
+    ],
+    answer:
+      "A serverless function that runs at edge locations closer to the user",
+    explanation:
+      "Edge functions execute serverless code at edge locations to reduce latency and improve user experience.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "In SQL, what does the EXPLAIN plan show?",
+    options: [
+      "The execution time of each query",
+      "The privileges of a user",
+      "The physical execution plan of a SQL query",
+      "The size of the database",
+    ],
+    answer: "The physical execution plan of a SQL query",
+    explanation:
+      "EXPLAIN shows the execution plan used by the SQL engine, including index usage, join methods, and scan types.",
+    tags: ["sql", "database"],
+  },
+  {
+    prompt:
+      "Which Webpack feature allows splitting third-party libraries from your own code?",
+    options: [
+      "Dynamic imports",
+      "CommonsChunkPlugin / SplitChunksPlugin",
+      "Module federation",
+      "Tree shaking",
+    ],
+    answer: "CommonsChunkPlugin / SplitChunksPlugin",
+    explanation:
+      "The SplitChunksPlugin (modern replacement for CommonsChunkPlugin) enables separating vendor (third-party) code into its own chunk.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the 'Preload' browser hint do?",
+    options: [
+      "Preloads JavaScript as an inline script",
+      "Pre-downloads specified resources to improve load times",
+      "Caches resources indefinitely",
+      "Runs service worker updates",
+    ],
+    answer: "Pre-downloads specified resources to improve load times",
+    explanation:
+      "`<link rel='preload'>` tells the browser to start downloading key resources early in the page load process.",
+    tags: ["browser", "performance"],
+  },
+  {
+    prompt:
+      "In HTML forms, what is the purpose of the `autocomplete` attribute?",
+    options: [
+      "To automatically submit the form",
+      "To prevent the browser from caching the page",
+      "To suggest and autofill previously entered values",
+      "To validate required fields automatically",
+    ],
+    answer: "To suggest and autofill previously entered values",
+    explanation:
+      "`autocomplete` controls whether the browser offers autofill suggestions for the form fields.",
+    tags: ["html", "forms"],
+  },
+  {
+    prompt: "What does the HTML `<template>` element provide?",
+    options: [
+      "It displays content immediately",
+      "It stores content for use with JavaScript without rendering it initially",
+      "It defines a new form element",
+      "It forces lazy loading",
+    ],
+    answer:
+      "It stores content for use with JavaScript without rendering it initially",
+    explanation:
+      "`<template>` holds inert DOM content that can be cloned and inserted into the document via JavaScript.",
+    tags: ["html", "template"],
+  },
+  {
+    prompt:
+      "What is the primary security risk associated with using `<iframe>` elements?",
+    options: [
+      "Increased load time",
+      "Cross-site scripting inside iframe",
+      "Clickjacking attacks",
+      "Form validation bypass",
+    ],
+    answer: "Clickjacking attacks",
+    explanation:
+      "iframes can be used in clickjacking attacks; using `X-Frame-Options` or `Content-Security-Policy: frame-ancestors` helps mitigate this.",
+    tags: ["html", "iframe", "security"],
+  },
+  {
+    prompt: "In CSS, what does `box-sizing: border-box` affect?",
+    options: [
+      "Only margin calculations",
+      "Only content width",
+      "It includes padding and border inside the total element width/height",
+      "It disables media queries",
+    ],
+    answer:
+      "It includes padding and border inside the total element width/height",
+    explanation:
+      "With `border-box`, the width and height include padding and border, making sizing more predictable.",
+    tags: ["css", "box-model"],
+  },
+  {
+    prompt: "In JSON, what is a valid value type?",
+    options: ["function", "symbol", "undefined", "array"],
+    answer: "array",
+    explanation:
+      "JSON supports objects, arrays, numbers, strings, booleans, and null. Functions and undefined are not allowed.",
+    tags: ["json", "javascript"],
+  },
+  {
+    prompt: "Which browser API can help debug performance bottlenecks?",
+    options: [
+      "DOMParser",
+      "Performance API (window.performance)",
+      "BroadcastChannel",
+      "MutationObserver",
+    ],
+    answer: "Performance API (window.performance)",
+    explanation:
+      "The Performance API provides fine-grained timing information useful for debugging performance issues.",
+    tags: ["browser", "debugging", "performance"],
+  },
+  {
+    prompt: "What is the purpose of the CORS preflight request?",
+    options: [
+      "To authenticate the user before a request",
+      "To verify if the target server allows the actual request method and headers",
+      "To encrypt the HTTP request body",
+      "To enable server-side redirects",
+    ],
+    answer:
+      "To verify if the target server allows the actual request method and headers",
+    explanation:
+      "A CORS preflight request (OPTIONS) checks server permissions for complex requests.",
+    tags: ["network", "cors"],
+  },
+  {
+    prompt: "What does a DNS `TTL` value affect?",
+    options: [
+      "How long an IP address is cached by DNS resolvers",
+      "How long TLS sessions are valid",
+      "How long cookies are stored",
+      "How long a TCP handshake takes",
+    ],
+    answer: "How long an IP address is cached by DNS resolvers",
+    explanation:
+      "DNS TTL (Time to Live) controls how long DNS records are cached by resolvers.",
+    tags: ["network", "dns"],
+  },
+  {
+    prompt:
+      "Which header is used to help prevent Cross-Site Scripting (XSS) via content injection?",
+    options: [
+      "Access-Control-Allow-Origin",
+      "Content-Security-Policy",
+      "X-DNS-Prefetch-Control",
+      "ETag",
+    ],
+    answer: "Content-Security-Policy",
+    explanation:
+      "`Content-Security-Policy` allows you to restrict the sources of content that the browser can load, mitigating XSS risks.",
+    tags: ["network", "csp", "security"],
+  },
+  {
+    prompt: "In ESLint, what is the purpose of 'rules' configuration?",
+    options: [
+      "To define the JavaScript version supported",
+      "To define custom syntax highlighting",
+      "To enable or disable specific linting checks",
+      "To manage dependency versions",
+    ],
+    answer: "To enable or disable specific linting checks",
+    explanation:
+      "ESLint rules allow you to customize which coding style and error checks are enforced in your project.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "In HTML5 form validation, what does the `pattern` attribute do?",
+    options: [
+      "It defines a CSS pattern to apply to the input",
+      "It specifies a regular expression the input value must match",
+      "It applies a default value to the input",
+      "It disables validation for the input",
+    ],
+    answer: "It specifies a regular expression the input value must match",
+    explanation:
+      "The `pattern` attribute defines a regular expression that input values must conform to for the form to pass validation.",
+    tags: ["html", "validation"],
+  },
+  {
+    prompt: "What is the primary use of the HTML `<meta viewport>` tag?",
+    options: [
+      "To control DNS caching",
+      "To specify HTTP status codes",
+      "To control layout scaling and viewport sizing on mobile devices",
+      "To manage cookies",
+    ],
+    answer: "To control layout scaling and viewport sizing on mobile devices",
+    explanation:
+      "The `<meta viewport>` tag allows developers to control the page’s dimensions and scaling on mobile browsers.",
+    tags: ["html", "meta", "responsive"],
+  },
+  {
+    prompt:
+      "In HTML, what does the `srcset` attribute of an `<img>` tag enable?",
+    options: [
+      "Lazy loading of images",
+      "Embedding multiple images as a slideshow",
+      "Responsive image loading based on device resolution",
+      "Preloading the image",
+    ],
+    answer: "Responsive image loading based on device resolution",
+    explanation:
+      "`srcset` allows the browser to choose the most appropriate image to load based on the device's display resolution and size.",
+    tags: ["html", "media", "responsive"],
+  },
+  {
+    prompt:
+      "Which CSS selector matches elements that are direct children of a given element?",
+    options: [
+      "element + element",
+      "element element",
+      "element > element",
+      "element ~ element",
+    ],
+    answer: "element > element",
+    explanation:
+      "The `>` selector matches elements that are direct children of a specified parent.",
+    tags: ["css", "selectors"],
+  },
+  {
+    prompt: "In CSS, which unit is relative to the viewport height?",
+    options: ["em", "vh", "rem", "px"],
+    answer: "vh",
+    explanation: "`vh` is a unit relative to 1% of the height of the viewport.",
+    tags: ["css", "units"],
+  },
+  {
+    prompt:
+      "In JavaScript, which event signals that the DOM is fully parsed but subresources may still be loading?",
+    options: ["DOMContentLoaded", "load", "readystatechange", "beforeunload"],
+    answer: "DOMContentLoaded",
+    explanation:
+      "`DOMContentLoaded` fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.",
+    tags: ["javascript", "dom"],
+  },
+  {
+    prompt: "What is a SYN packet used for in TCP?",
+    options: [
+      "To close a TCP connection",
+      "To acknowledge data receipt",
+      "To request establishing a new TCP connection",
+      "To reset the connection state",
+    ],
+    answer: "To request establishing a new TCP connection",
+    explanation:
+      "A SYN packet is sent during the initial handshake to request opening a new TCP connection.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "What is the key difference between TCP and UDP protocols?",
+    options: [
+      "UDP is connection-oriented; TCP is not",
+      "TCP guarantees delivery and ordering; UDP does not",
+      "UDP is used for file transfers; TCP is used for video streaming",
+      "TCP uses port numbers; UDP does not",
+    ],
+    answer: "TCP guarantees delivery and ordering; UDP does not",
+    explanation:
+      "TCP is a connection-oriented protocol with delivery and order guarantees, while UDP is connectionless with no delivery guarantees.",
+    tags: ["network", "tcp", "udp"],
+  },
+  {
+    prompt: "What does a CSRF attack attempt to do?",
+    options: [
+      "Steal cookies from the browser",
+      "Force a user’s browser to make unauthorized requests on their behalf",
+      "Intercept TCP packets",
+      "Perform SQL injection",
+    ],
+    answer:
+      "Force a user’s browser to make unauthorized requests on their behalf",
+    explanation:
+      "A CSRF (Cross-Site Request Forgery) attack tricks the user's browser into submitting unauthorized requests to a trusted site.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "What is the role of `status` codes in HTTP responses?",
+    options: [
+      "They define the content type of the response",
+      "They indicate the success or failure of the request",
+      "They specify the compression method used",
+      "They trigger redirects in JavaScript",
+    ],
+    answer: "They indicate the success or failure of the request",
+    explanation:
+      "HTTP status codes communicate whether the request was successful, resulted in an error, or requires further action.",
+    tags: ["network", "status"],
+  },
+  {
+    prompt:
+      'What is the purpose of the `rel="noopener noreferrer"` attribute on a link?',
+    options: [
+      "To preload linked content",
+      "To prevent XSS inside the link",
+      "To prevent the new page from accessing `window.opener` and to avoid leaking referrer information",
+      "To force the link to open in the same tab",
+    ],
+    answer:
+      "To prevent the new page from accessing `window.opener` and to avoid leaking referrer information",
+    explanation:
+      'Using `rel="noopener noreferrer"` prevents reverse tabnabbing and suppresses the referrer header for privacy.',
+    tags: ["html", "attributes", "security"],
+  },
+  {
+    prompt:
+      "Which iframe attribute is used to restrict what the iframe can do?",
+    options: ["sandbox", "srcdoc", "referrerpolicy", "crossorigin"],
+    answer: "sandbox",
+    explanation:
+      "`sandbox` applies restrictions to the iframe content, such as disallowing script execution or form submission.",
+    tags: ["html", "iframe", "security"],
+  },
+  {
+    prompt: "Which meta tag is used to improve SEO with a page description?",
+    options: [
+      '<meta name="viewport">',
+      '<meta name="robots">',
+      '<meta name="description">',
+      '<meta http-equiv="Content-Type">',
+    ],
+    answer: '<meta name="description">',
+    explanation:
+      'The `<meta name="description">` tag provides a summary of the page, which is often used in search engine results.',
+    tags: ["html", "meta", "seo"],
+  },
+  {
+    prompt: "What does the `novalidate` attribute do on an HTML form?",
+    options: [
+      "Triggers custom validation only",
+      "Forces the form to validate using JavaScript only",
+      "Disables built-in browser form validation",
+      "Enables default styles for invalid inputs",
+    ],
+    answer: "Disables built-in browser form validation",
+    explanation:
+      "`novalidate` disables HTML5's built-in form validation for a form.",
+    tags: ["html", "forms", "validation"],
+  },
+  {
+    prompt: "In CSS Grid, what does the `auto-fit` keyword do?",
+    options: [
+      "It fixes grid items to a fixed width",
+      "It hides grid items that don't fit",
+      "It repeats columns to fill the available space and collapses empty tracks",
+      "It converts grid to flexbox",
+    ],
+    answer:
+      "It repeats columns to fill the available space and collapses empty tracks",
+    explanation:
+      "`auto-fit` causes grid tracks to expand to fill the space and collapse when there is not enough content.",
+    tags: ["css", "layout", "responsive"],
+  },
+  {
+    prompt:
+      "Which DOM event is specifically used to catch uncaught JavaScript errors?",
+    options: ["load", "error", "unhandledrejection", "DOMContentLoaded"],
+    answer: "error",
+    explanation:
+      "The global `error` event can be used to catch uncaught JavaScript runtime errors.",
+    tags: ["javascript", "dom", "error-handling"],
+  },
+  {
+    prompt: "What is the maximum segment size (MSS) in TCP primarily used for?",
+    options: [
+      "To limit the size of the IP packet header",
+      "To define the maximum data payload size in a TCP segment",
+      "To prevent SYN floods",
+      "To define UDP packet size",
+    ],
+    answer: "To define the maximum data payload size in a TCP segment",
+    explanation:
+      "MSS defines the largest segment of data that a device can receive in a single TCP segment.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt:
+      "Why is UDP preferred over TCP for real-time applications like video calls?",
+    options: [
+      "UDP is more secure than TCP",
+      "UDP guarantees packet delivery",
+      "UDP has lower overhead and tolerates packet loss better",
+      "UDP supports encryption natively",
+    ],
+    answer: "UDP has lower overhead and tolerates packet loss better",
+    explanation:
+      "UDP is lightweight, has no delivery guarantees, and is suitable for time-sensitive applications where occasional packet loss is acceptable.",
+    tags: ["network", "udp"],
+  },
+  {
+    prompt: "What is a common technique to mitigate CSRF attacks?",
+    options: [
+      "Use CSP headers",
+      "Use SameSite cookies",
+      "Use CORS preflight requests",
+      "Block all HTTP POST requests",
+    ],
+    answer: "Use SameSite cookies",
+    explanation:
+      "Setting cookies with `SameSite=strict` or `SameSite=lax` helps mitigate CSRF attacks by controlling cross-origin cookie behavior.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "What is the purpose of the `eslint --fix` option?",
+    options: [
+      "It installs missing packages",
+      "It automatically fixes problems that can be fixed",
+      "It runs tests after linting",
+      "It validates CSS files",
+    ],
+    answer: "It automatically fixes problems that can be fixed",
+    explanation:
+      "`eslint --fix` automatically fixes linting issues that can be fixed, such as formatting or spacing errors.",
+    tags: ["tools", "eslint", "build"],
+  },
+  {
+    prompt:
+      'What does setting `referrerpolicy="no-referrer"` on a link or iframe do?',
+    options: [
+      "It prevents the linked page from knowing where the visitor came from",
+      "It blocks CORS requests",
+      "It disables caching for the resource",
+      "It forces the resource to be loaded from a CDN",
+    ],
+    answer:
+      "It prevents the linked page from knowing where the visitor came from",
+    explanation:
+      '`referrerpolicy="no-referrer"` removes the `Referer` header from the request, protecting privacy.',
+    tags: ["html", "attributes", "security"],
+  },
+  {
+    prompt:
+      "How can a website prevent itself from being embedded in an iframe on another site?",
+    options: [
+      "By using the `sandbox` attribute",
+      "By setting `X-Frame-Options` or `Content-Security-Policy: frame-ancestors`",
+      "By using a SameSite cookie",
+      "By disabling JavaScript",
+    ],
+    answer:
+      "By setting `X-Frame-Options` or `Content-Security-Policy: frame-ancestors`",
+    explanation:
+      "`X-Frame-Options` and `Content-Security-Policy: frame-ancestors` can prevent a site from being embedded in an iframe.",
+    tags: ["html", "iframe", "security"],
+  },
+  {
+    prompt: "In CSS, what is the difference between `em` and `rem` units?",
+    options: [
+      "`em` is relative to the root element; `rem` is relative to the parent element",
+      "`rem` is relative to the root element; `em` is relative to the parent element",
+      "They are the same",
+      "`em` is used for media queries only",
+    ],
+    answer:
+      "`rem` is relative to the root element; `em` is relative to the parent element",
+    explanation:
+      "`rem` scales from the root element’s font size, while `em` scales from the nearest parent with a defined font size.",
+    tags: ["css", "units"],
+  },
+  {
+    prompt:
+      "What is the purpose of the `Content-Security-Policy: script-src 'nonce-XYZ'` directive?",
+    options: [
+      "It forces JavaScript files to be downloaded from a CDN",
+      "It allows only scripts with a matching nonce to be executed",
+      "It blocks all external scripts",
+      "It forces inline styles to use nonces",
+    ],
+    answer: "It allows only scripts with a matching nonce to be executed",
+    explanation:
+      "The `nonce` directive allows scripts that have a matching `nonce` attribute to run, mitigating XSS attacks.",
+    tags: ["network", "csp", "security"],
+  },
+  {
+    prompt:
+      "Why might a serverless function benefit from being deployed to an edge location?",
+    options: [
+      "To save on bandwidth costs",
+      "To improve API rate limiting",
+      "To reduce latency by being closer to users",
+      "To allow synchronous database writes",
+    ],
+    answer: "To reduce latency by being closer to users",
+    explanation:
+      "Deploying serverless functions to edge locations reduces latency by processing requests geographically closer to the end user.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "In Webpack, what is the purpose of the `externals` configuration?",
+    options: [
+      "To inline JavaScript files",
+      "To skip bundling certain dependencies and expect them to be loaded externally",
+      "To preload fonts",
+      "To apply CSS modules",
+    ],
+    answer:
+      "To skip bundling certain dependencies and expect them to be loaded externally",
+    explanation:
+      "`externals` tells Webpack not to bundle certain libraries (like React from a CDN), reducing bundle size.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "Why does TCP use a 3-way handshake?",
+    options: [
+      "To detect packet loss",
+      "To exchange encryption keys",
+      "To synchronize sequence numbers and establish a reliable connection",
+      "To optimize for streaming data",
+    ],
+    answer:
+      "To synchronize sequence numbers and establish a reliable connection",
+    explanation:
+      "TCP’s 3-way handshake ensures both parties agree on starting sequence numbers and connection parameters before data transfer begins.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "Why is UDP often used in DNS queries?",
+    options: [
+      "Because DNS queries require guaranteed delivery",
+      "Because UDP is faster and has lower overhead for small, quick queries",
+      "Because UDP supports TLS encryption natively",
+      "Because DNS uses long-lived streaming connections",
+    ],
+    answer:
+      "Because UDP is faster and has lower overhead for small, quick queries",
+    explanation:
+      "UDP is stateless and lightweight, making it ideal for small, fast DNS lookups where reliability is handled at a higher layer if needed.",
+    tags: ["network", "udp", "dns"],
+  },
+  {
+    prompt:
+      "What is the main difference between `try...catch` and `window.onerror` in JavaScript?",
+    options: [
+      "`try...catch` only handles asynchronous errors",
+      "`window.onerror` can catch uncaught global errors, including runtime errors",
+      "`try...catch` disables the JavaScript event loop",
+      "`window.onerror` can be used only inside Web Workers",
+    ],
+    answer:
+      "`window.onerror` can catch uncaught global errors, including runtime errors",
+    explanation:
+      "`window.onerror` provides a global handler for uncaught runtime errors, while `try...catch` must wrap specific synchronous code blocks.",
+    tags: ["javascript", "error-handling"],
+  },
+  {
+    prompt: "What does the ESLint rule `no-console` typically enforce?",
+    options: [
+      "It blocks use of `console.log()` and other console methods in production code",
+      "It prevents the use of alert dialogs",
+      "It disallows global variable declarations",
+      "It enforces console logging in all functions",
+    ],
+    answer:
+      "It blocks use of `console.log()` and other console methods in production code",
+    explanation:
+      "`no-console` is commonly used to disallow `console.log()` statements in code that will run in production.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt:
+      'What is the purpose of the `meta http-equiv="Content-Security-Policy"` tag in HTML?',
+    options: [
+      "To specify character encoding",
+      "To define the default language",
+      "To enforce Content Security Policy via HTML instead of HTTP header",
+      "To enable cookies",
+    ],
+    answer:
+      "To enforce Content Security Policy via HTML instead of HTTP header",
+    explanation:
+      'You can define CSP rules inline via `<meta http-equiv="Content-Security-Policy">`, though HTTP header is preferred.',
+    tags: ["html", "meta", "security"],
+  },
+  {
+    prompt: "In forms, what does the `required` attribute do?",
+    options: [
+      "Sets a default value",
+      "Prevents the field from being submitted empty",
+      "Adds a server-side validator",
+      "Applies a placeholder",
+    ],
+    answer: "Prevents the field from being submitted empty",
+    explanation:
+      "The `required` attribute makes a field mandatory for form submission.",
+    tags: ["html", "forms", "validation"],
+  },
+  {
+    prompt:
+      "Which iframe attribute allows the browser to enforce specific policies for the content inside the iframe?",
+    options: ["loading", "sandbox", "referrerpolicy", "decoding"],
+    answer: "sandbox",
+    explanation:
+      "The `sandbox` attribute can restrict the iframe’s capabilities (e.g. no script, no form submission, no popups).",
+    tags: ["html", "iframe", "security"],
+  },
+  {
+    prompt: "Which CSS layout method allows true two-dimensional grid layouts?",
+    options: ["Flexbox", "CSS Grid", "Position absolute", "Float"],
+    answer: "CSS Grid",
+    explanation:
+      "CSS Grid enables two-dimensional layouts (rows and columns), while Flexbox is one-dimensional.",
+    tags: ["css", "layout"],
+  },
+  {
+    prompt:
+      "What is the purpose of `event.stopPropagation()` in DOM event handling?",
+    options: [
+      "To cancel the default behavior",
+      "To prevent the event from bubbling up to parent elements",
+      "To execute the event handler synchronously",
+      "To convert the event into a custom event",
+    ],
+    answer: "To prevent the event from bubbling up to parent elements",
+    explanation:
+      "`stopPropagation()` stops an event from bubbling up the DOM tree.",
+    tags: ["javascript", "dom", "performance"],
+  },
+  {
+    prompt: "In TCP, what is the function of the FIN flag?",
+    options: [
+      "To initiate the TCP handshake",
+      "To indicate data corruption",
+      "To signal that no more data will be sent (connection closing)",
+      "To reset the connection immediately",
+    ],
+    answer: "To signal that no more data will be sent (connection closing)",
+    explanation:
+      "The FIN flag signals that the sender has finished sending data and wants to close the connection gracefully.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "How can you prevent a CSRF attack on a REST API?",
+    options: [
+      "By setting Access-Control-Allow-Origin: *",
+      "By using anti-CSRF tokens and validating them server-side",
+      "By using a strong password policy",
+      "By using a CAPTCHA on login",
+    ],
+    answer: "By using anti-CSRF tokens and validating them server-side",
+    explanation:
+      "Anti-CSRF tokens ensure that requests are intentional and made by the legitimate client.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "What is the main purpose of the `preconnect` link relation?",
+    options: [
+      "To preload images",
+      "To establish early connections to important third-party origins",
+      "To optimize font rendering",
+      "To prioritize CSS loading",
+    ],
+    answer: "To establish early connections to important third-party origins",
+    explanation:
+      '`<link rel="preconnect">` allows browsers to set up early connections to an external resource.',
+    tags: ["network", "cors", "performance"],
+  },
+  {
+    prompt: "In Webpack, what is the purpose of a `source map`?",
+    options: [
+      "To map CSS variables",
+      "To optimize images",
+      "To allow debugging minified JavaScript by mapping back to original source",
+      "To prefetch dynamic modules",
+    ],
+    answer:
+      "To allow debugging minified JavaScript by mapping back to original source",
+    explanation:
+      "Source maps map transformed or minified code back to the original source for debugging.",
+    tags: ["tools", "webpack", "build", "debugging"],
+  },
+  {
+    prompt: "What is the role of a CDN edge server?",
+    options: [
+      "To host dynamic server-side content",
+      "To forward traffic to the origin server without caching",
+      "To serve cached static content close to the user",
+      "To compress HTML files only",
+    ],
+    answer: "To serve cached static content close to the user",
+    explanation:
+      "CDN edge servers cache static resources and serve them from geographically distributed locations, improving load times.",
+    tags: ["hosting", "cdn", "performance"],
+  },
+  {
+    prompt: "What does the HTML `aria-label` attribute provide?",
+    options: [
+      "A visual label for buttons",
+      "An internal identifier for testing",
+      "A label for screen readers when no visible text label is provided",
+      "A CSS class for responsive layout",
+    ],
+    answer: "A label for screen readers when no visible text label is provided",
+    explanation:
+      "`aria-label` provides an accessible label for screen readers when no visible text label is used.",
+    tags: ["html", "attributes", "accessibility"],
+  },
+  {
+    prompt: "How does `object-fit: cover;` affect an image in CSS?",
+    options: [
+      "It scales the image while maintaining aspect ratio and filling the element",
+      "It stretches the image to fill the element, ignoring aspect ratio",
+      "It crops the image to a square",
+      "It disables lazy loading",
+    ],
+    answer:
+      "It scales the image while maintaining aspect ratio and filling the element",
+    explanation:
+      "`object-fit: cover;` ensures the image fills its container while maintaining aspect ratio, cropping if needed.",
+    tags: ["css", "layout", "responsive"],
+  },
+  {
+    prompt: "In the DOM, what does `event.currentTarget` refer to?",
+    options: [
+      "The element the event originally fired on",
+      "The element currently handling the event",
+      "The document object",
+      "The global window object",
+    ],
+    answer: "The element currently handling the event",
+    explanation:
+      "`event.currentTarget` refers to the element whose event listener is currently processing the event.",
+    tags: ["javascript", "dom", "performance"],
+  },
+  {
+    prompt: "What is the role of the `X-CSRF-Token` header?",
+    options: [
+      "To authenticate the user",
+      "To provide an anti-CSRF token for validating form requests",
+      "To block XSS attacks",
+      "To enable HTTP/2 features",
+    ],
+    answer: "To provide an anti-CSRF token for validating form requests",
+    explanation:
+      "`X-CSRF-Token` is often used to send an anti-CSRF token to the server for validation.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "In Webpack, what is a dynamic import used for?",
+    options: [
+      "Inlining all JS files into a single bundle",
+      "Importing ES modules at runtime, enabling code splitting",
+      "Preloading fonts",
+      "Optimizing images",
+    ],
+    answer: "Importing ES modules at runtime, enabling code splitting",
+    explanation:
+      "Dynamic imports enable code splitting by allowing parts of code to be loaded on demand.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the CSS `:not()` selector do?",
+    options: [
+      "It matches all elements of a type",
+      "It selects the first child element",
+      "It selects elements not matching a given selector",
+      "It disables event listeners",
+    ],
+    answer: "It selects elements not matching a given selector",
+    explanation:
+      "The `:not()` selector matches elements that do not match the specified selector.",
+    tags: ["css", "selectors"],
+  },
+  {
+    prompt:
+      "In JavaScript, how can you catch unhandled Promise rejections globally?",
+    options: [
+      "Using window.onerror",
+      "Using window.onunhandledrejection",
+      "Using try/catch",
+      "Using async/await",
+    ],
+    answer: "Using window.onunhandledrejection",
+    explanation:
+      "`window.onunhandledrejection` handles uncaught Promise rejections globally.",
+    tags: ["javascript", "error-handling"],
+  },
+  {
+    prompt: "Why does UDP not guarantee packet ordering?",
+    options: [
+      "It uses a different version of IP",
+      "It is designed for low-latency scenarios where ordering is not critical",
+      "It uses TCP internally",
+      "It always drops duplicate packets",
+    ],
+    answer:
+      "It is designed for low-latency scenarios where ordering is not critical",
+    explanation:
+      "UDP is designed for fast, connectionless transmission and does not guarantee ordering or delivery.",
+    tags: ["network", "udp"],
+  },
+  {
+    prompt: "What is the purpose of the `Accept` HTTP header?",
+    options: [
+      "To tell the server which media types the client is able to process",
+      "To provide an authorization token",
+      "To block CORS requests",
+      "To enforce HTTPS",
+    ],
+    answer:
+      "To tell the server which media types the client is able to process",
+    explanation:
+      "`Accept` tells the server what content types (e.g. JSON, HTML) the client can handle.",
+    tags: ["network", "cors", "status"],
+  },
+  {
+    prompt: "What is a key benefit of using a CDN for static assets?",
+    options: [
+      "It guarantees SEO optimization",
+      "It accelerates dynamic API responses",
+      "It reduces latency by serving content from edge servers",
+      "It enables faster server-side rendering",
+    ],
+    answer: "It reduces latency by serving content from edge servers",
+    explanation:
+      "A CDN caches static content at edge locations close to users, improving load time and reducing latency.",
+    tags: ["hosting", "cdn", "performance"],
+  },
+  {
+    prompt: 'In HTML, what is the purpose of the `rel="preload"` link?',
+    options: [
+      "It defers script execution until after rendering",
+      "It tells the browser to cache all images",
+      "It allows the browser to start fetching critical resources earlier",
+      "It pre-renders a full page",
+    ],
+    answer:
+      "It allows the browser to start fetching critical resources earlier",
+    explanation:
+      '`rel="preload"` allows critical resources like fonts or images to be fetched earlier in the page load.',
+    tags: ["html", "meta", "performance"],
+  },
+  {
+    prompt: "What does the CSS property `contain: layout;` do?",
+    options: [
+      "Prevents elements from inheriting fonts",
+      "Enables layout containment, optimizing rendering and reducing repaint scope",
+      "Prevents grid items from being resized",
+      "Forces the element to take full viewport width",
+    ],
+    answer:
+      "Enables layout containment, optimizing rendering and reducing repaint scope",
+    explanation:
+      "`contain: layout;` allows the browser to optimize layout calculations by isolating layout within an element.",
+    tags: ["css", "layout", "performance"],
+  },
+  {
+    prompt: "In JavaScript, what does `performance.now()` provide?",
+    options: [
+      "The current Unix timestamp",
+      "The number of seconds since DOMContentLoaded",
+      "A high-resolution timestamp in milliseconds for performance measurements",
+      "The frame rate of the page",
+    ],
+    answer:
+      "A high-resolution timestamp in milliseconds for performance measurements",
+    explanation:
+      "`performance.now()` returns a precise timestamp useful for performance profiling.",
+    tags: ["javascript", "performance"],
+  },
+  {
+    prompt: "What does the TCP RST flag indicate?",
+    options: [
+      "The connection should be reset immediately",
+      "The client is initiating a connection",
+      "The server is closing the connection gracefully",
+      "The connection has timed out",
+    ],
+    answer: "The connection should be reset immediately",
+    explanation:
+      "The RST flag resets a TCP connection immediately, often due to errors or unexpected traffic.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "What does the SameSite=Lax cookie setting do?",
+    options: [
+      "Allows cookies in all cross-origin requests",
+      "Blocks cookies entirely",
+      "Allows cookies on top-level navigation but blocks them on third-party requests",
+      "Requires HTTPS for cookie transmission",
+    ],
+    answer:
+      "Allows cookies on top-level navigation but blocks them on third-party requests",
+    explanation:
+      "`SameSite=Lax` allows cookies to be sent on top-level navigations but not on subresource requests, reducing CSRF risk.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "What is the key role of Webpack's `SplitChunksPlugin`?",
+    options: [
+      "It tree-shakes unused code",
+      "It separates common dependencies into separate chunks to optimize caching",
+      "It minifies CSS files",
+      "It enforces consistent module versions",
+    ],
+    answer:
+      "It separates common dependencies into separate chunks to optimize caching",
+    explanation:
+      "`SplitChunksPlugin` allows splitting common modules into separate chunks for better caching and load performance.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the `:nth-child(odd)` selector do in CSS?",
+    options: [
+      "Selects the first odd-numbered element of a type",
+      "Selects all odd-numbered children of a parent element",
+      "Selects only elements with odd values",
+      "Selects odd-numbered attributes",
+    ],
+    answer: "Selects all odd-numbered children of a parent element",
+    explanation:
+      "`:nth-child(odd)` selects the 1st, 3rd, 5th, etc. children of an element.",
+    tags: ["css", "selectors"],
+  },
+  {
+    prompt: "In JavaScript, what will `JSON.stringify(undefined)` return?",
+    options: ["null", "undefined", "An empty string", '"undefined"'],
+    answer: "undefined",
+    explanation:
+      "Calling `JSON.stringify(undefined)` returns `undefined`, meaning no output is generated.",
+    tags: ["javascript", "json"],
+  },
+  {
+    prompt: "What does the Access-Control-Allow-Credentials CORS header do?",
+    options: [
+      "Allows cross-origin requests only on GET",
+      "Allows cookies and credentials to be sent with cross-origin requests",
+      "Allows JavaScript to read response headers",
+      "Allows caching of preflight requests",
+    ],
+    answer:
+      "Allows cookies and credentials to be sent with cross-origin requests",
+    explanation:
+      "`Access-Control-Allow-Credentials` allows cross-origin requests to include cookies and HTTP auth credentials.",
+    tags: ["network", "cors"],
+  },
+  {
+    prompt: "What is a benefit of serverless architectures?",
+    options: [
+      "They eliminate the need for JavaScript",
+      "They guarantee faster disk I/O",
+      "They scale automatically based on usage without server management",
+      "They require no CORS configuration",
+    ],
+    answer: "They scale automatically based on usage without server management",
+    explanation:
+      "Serverless architectures automatically scale based on demand and eliminate the need for managing server instances.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "What does the HTML `defer` attribute on a script tag do?",
+    options: [
+      "It prevents the script from being cached",
+      "It defers the script until after DOMContentLoaded",
+      "It loads the script in a background thread",
+      "It disables inline event listeners",
+    ],
+    answer: "It defers the script until after DOMContentLoaded",
+    explanation:
+      "`defer` tells the browser to execute the script after parsing the HTML and before firing DOMContentLoaded.",
+    tags: ["html", "performance"],
+  },
+  {
+    prompt:
+      "What is the result of setting `overflow: hidden;` on a parent element?",
+    options: [
+      "It disables text wrapping",
+      "It clips content that exceeds the element’s box",
+      "It prevents event propagation",
+      "It forces block display",
+    ],
+    answer: "It clips content that exceeds the element’s box",
+    explanation:
+      "`overflow: hidden;` clips any child content that exceeds the boundaries of the parent box.",
+    tags: ["css", "layout"],
+  },
+  {
+    prompt: "In JavaScript, what does the `finally` block guarantee?",
+    options: [
+      "It is executed only if the try block succeeds",
+      "It is executed only if the try block fails",
+      "It is executed regardless of whether an error was thrown or not",
+      "It disables async/await behavior",
+    ],
+    answer: "It is executed regardless of whether an error was thrown or not",
+    explanation:
+      "The `finally` block runs after try/catch, no matter whether an exception was thrown.",
+    tags: ["javascript", "error-handling"],
+  },
+  {
+    prompt: "What is one typical use of the TCP window size mechanism?",
+    options: [
+      "It controls the time-to-live (TTL) of packets",
+      "It determines the number of packets in a single burst",
+      "It manages flow control by telling the sender how much data it can send",
+      "It forces retransmission of lost packets",
+    ],
+    answer:
+      "It manages flow control by telling the sender how much data it can send",
+    explanation:
+      "The TCP window size defines how much data can be sent without receiving an ACK, implementing flow control.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "Which CSRF mitigation strategy is most effective for REST APIs?",
+    options: [
+      "Disabling CORS entirely",
+      "Using JWT without validation",
+      "Requiring an anti-CSRF token sent via a custom header",
+      "Using iframe embedding prevention",
+    ],
+    answer: "Requiring an anti-CSRF token sent via a custom header",
+    explanation:
+      "An anti-CSRF token in a custom header ensures the request was made by the legitimate client.",
+    tags: ["network", "csrf", "security"],
+  },
+  {
+    prompt: "What is one benefit of Webpack's `Tree Shaking`?",
+    options: [
+      "It removes CSS not used in the project",
+      "It eliminates dead or unused JavaScript exports from the final bundle",
+      "It automatically polyfills ES6 features",
+      "It speeds up CSS parsing",
+    ],
+    answer:
+      "It eliminates dead or unused JavaScript exports from the final bundle",
+    explanation:
+      "`Tree Shaking` removes unused ES module exports from the bundle, reducing bundle size.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt:
+      "What is the CSS specificity of the selector `#main .button:hover`?",
+    options: ["0,1,2", "1,1,1", "1,0,2", "0,2,1"],
+    answer: "1,0,2",
+    explanation:
+      "`#main` counts as one ID (1), `.button` is one class (0,1), and `:hover` is one pseudo-class (0,1), so total: 1,0,2.",
+    tags: ["css", "selectors"],
+  },
+  {
+    prompt: "What is the result of calling `JSON.stringify({a: undefined})`?",
+    options: [
+      '`{"a":null}`',
+      '`{"a":"undefined"}`',
+      "`{}`",
+      '`{"a":undefined}`',
+    ],
+    answer: "`{}`",
+    explanation:
+      "Properties with `undefined` values are omitted entirely when using `JSON.stringify`.",
+    tags: ["javascript", "json"],
+  },
+  {
+    prompt: "What is the purpose of the CORS `Vary: Origin` header?",
+    options: [
+      "To allow the browser to cache responses based on the Origin",
+      "To specify allowed HTTP methods",
+      "To enable cross-site POST requests",
+      "To disable cookies in CORS",
+    ],
+    answer: "To allow the browser to cache responses based on the Origin",
+    explanation:
+      "`Vary: Origin` instructs caches to vary their response depending on the Origin header value.",
+    tags: ["network", "cors"],
+  },
+  {
+    prompt:
+      "What is a key benefit of serverless functions compared to traditional servers?",
+    options: [
+      "They eliminate the need for databases",
+      "They allow infinite request concurrency without manual scaling",
+      "They remove the need for content delivery networks",
+      "They guarantee faster disk IO",
+    ],
+    answer: "They allow infinite request concurrency without manual scaling",
+    explanation:
+      "Serverless platforms automatically scale function instances to handle any number of concurrent requests.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: 'What does the HTML `loading="lazy"` attribute do?',
+    options: [
+      "Forces eager image loading",
+      "Preloads images in background",
+      "Defers image loading until the image is near the viewport",
+      "Disables image caching",
+    ],
+    answer: "Defers image loading until the image is near the viewport",
+    explanation:
+      '`loading="lazy"` defers loading images to improve page performance by only loading them when needed.',
+    tags: ["html", "attributes", "performance"],
+  },
+  {
+    prompt:
+      "In CSS Grid, what does `grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))` achieve?",
+    options: [
+      "Creates a fixed grid of columns",
+      "Auto-fills columns with min 200px width, growing responsively",
+      "Prevents columns from collapsing",
+      "Creates equal width columns only",
+    ],
+    answer: "Auto-fills columns with min 200px width, growing responsively",
+    explanation:
+      "The `repeat(auto-fill, minmax(200px, 1fr))` syntax creates a flexible grid that adapts to viewport width.",
+    tags: ["css", "layout", "responsive"],
+  },
+  {
+    prompt: "What is the purpose of `try...finally` in JavaScript?",
+    options: [
+      "It prevents errors from being thrown",
+      "It allows skipping catch blocks",
+      "It ensures cleanup code runs even if an error is thrown",
+      "It makes the function synchronous",
+    ],
+    answer: "It ensures cleanup code runs even if an error is thrown",
+    explanation:
+      "`finally` ensures that cleanup code runs whether an exception was thrown or not.",
+    tags: ["javascript", "error-handling"],
+  },
+  {
+    prompt:
+      "Which event signals that all resources including images have loaded in the DOM?",
+    options: ["DOMContentLoaded", "load", "readystatechange", "beforeunload"],
+    answer: "load",
+    explanation:
+      "`load` fires when the whole page and all dependent resources are loaded.",
+    tags: ["javascript", "dom", "performance"],
+  },
+  {
+    prompt:
+      "What is a primary reason for DNS using UDP instead of TCP for most queries?",
+    options: [
+      "DNS packets are too large for TCP",
+      "UDP is connectionless and faster for small queries",
+      "UDP guarantees packet ordering",
+      "UDP encrypts queries automatically",
+    ],
+    answer: "UDP is connectionless and faster for small queries",
+    explanation:
+      "UDP reduces overhead, making it suitable for the small size and latency requirements of most DNS queries.",
+    tags: ["network", "udp", "dns"],
+  },
+  {
+    prompt: "What does the CORS `Access-Control-Expose-Headers` header do?",
+    options: [
+      "Specifies which response headers are exposed to the browser",
+      "Controls preflight caching",
+      "Prevents credentialed requests",
+      "Allows XSS safe response headers",
+    ],
+    answer: "Specifies which response headers are exposed to the browser",
+    explanation:
+      "`Access-Control-Expose-Headers` tells the browser which response headers should be made available to JS.",
+    tags: ["network", "cors"],
+  },
+  {
+    prompt: "In Webpack, what does setting `mode: production` do?",
+    options: [
+      "Disables tree shaking",
+      "Includes source maps",
+      "Enables optimizations like minification and scope hoisting",
+      "Automatically enables HMR (Hot Module Replacement)",
+    ],
+    answer: "Enables optimizations like minification and scope hoisting",
+    explanation:
+      "`mode: production` optimizes output for performance and smaller bundle size.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What is a characteristic of a serverless function?",
+    options: [
+      "It must always run on a dedicated server",
+      "It runs continuously",
+      "It starts on demand and is event-driven",
+      "It can only handle GET requests",
+    ],
+    answer: "It starts on demand and is event-driven",
+    explanation:
+      "Serverless functions are event-driven and start on demand, scaling automatically.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "What does ESLint's `no-unused-vars` rule enforce?",
+    options: [
+      "It prevents using variables in functions",
+      "It flags variables that are declared but never used",
+      "It forces all variables to be global",
+      "It disables the use of dynamic imports",
+    ],
+    answer: "It flags variables that are declared but never used",
+    explanation:
+      "`no-unused-vars` helps prevent unused variables from cluttering code and causing confusion.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "In HTML forms, what does the `pattern` attribute enforce?",
+    options: [
+      "It applies default styling",
+      "It disables form validation",
+      "It enforces a specific input format using a regular expression",
+      "It triggers an AJAX submission",
+    ],
+    answer: "It enforces a specific input format using a regular expression",
+    explanation:
+      "`pattern` allows enforcing input format validation using a regular expression.",
+    tags: ["html", "forms", "validation"],
+  },
+  {
+    prompt:
+      "In HTML, what is the purpose of the `crossorigin` attribute on images or scripts?",
+    options: [
+      "It forces HTTPS",
+      "It allows CORS requests for the resource",
+      "It enables lazy loading",
+      "It improves SEO",
+    ],
+    answer: "It allows CORS requests for the resource",
+    explanation:
+      "`crossorigin` enables CORS requests for resources, so their content is accessible across origins.",
+    tags: ["html", "attributes", "cors"],
+  },
+  {
+    prompt: "In CSS, what does `clamp()` allow you to do?",
+    options: [
+      "Clamp elements to the viewport",
+      "Apply media queries to specific elements",
+      "Define a value that scales between a minimum and maximum range",
+      "Lock font sizes across devices",
+    ],
+    answer: "Define a value that scales between a minimum and maximum range",
+    explanation:
+      "`clamp()` lets you define a value that can scale between a minimum, ideal, and maximum value.",
+    tags: ["css", "units", "responsive"],
+  },
+  {
+    prompt: "What is `window.requestAnimationFrame()` used for?",
+    options: [
+      "To perform DOM updates immediately",
+      "To perform animations optimized to the display refresh rate",
+      "To block the main thread",
+      "To perform server-side rendering",
+    ],
+    answer: "To perform animations optimized to the display refresh rate",
+    explanation:
+      "`requestAnimationFrame()` schedules a callback to update animations before the next repaint, improving smoothness.",
+    tags: ["javascript", "performance"],
+  },
+  {
+    prompt: "What is the maximum recommended size of a single UDP packet?",
+    options: ["512 bytes", "65507 bytes", "1500 bytes", "1024 bytes"],
+    answer: "65507 bytes",
+    explanation:
+      "UDP payload size is limited to 65507 bytes, but in practice smaller packets (~1500 bytes) are used to avoid fragmentation.",
+    tags: ["network", "udp"],
+  },
+  {
+    prompt: "What is a potential security issue with iframes?",
+    options: [
+      "They cannot display images",
+      "They force TLS downgrade",
+      "They can be used for clickjacking unless restricted",
+      "They block service workers",
+    ],
+    answer: "They can be used for clickjacking unless restricted",
+    explanation:
+      "iframes can be used for clickjacking attacks unless `X-Frame-Options` or `Content-Security-Policy` is used.",
+    tags: ["html", "iframe", "security"],
+  },
+  {
+    prompt: "What is the role of Webpack’s `tree shaking`?",
+    options: [
+      "To split CSS into smaller files",
+      "To remove unused code from the final bundle",
+      "To deduplicate dependencies",
+      "To apply minification",
+    ],
+    answer: "To remove unused code from the final bundle",
+    explanation:
+      "Tree shaking eliminates unused exports to reduce bundle size and improve performance.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "How can you detect if a TCP connection is still alive?",
+    options: [
+      "By sending UDP keep-alive packets",
+      "By polling with WebSockets",
+      "By using TCP keep-alive packets",
+      "By forcing a DNS lookup",
+    ],
+    answer: "By using TCP keep-alive packets",
+    explanation:
+      "TCP keep-alive packets help detect broken connections even when no data is being sent.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt:
+      "What does `Content-Security-Policy: upgrade-insecure-requests` do?",
+    options: [
+      "It blocks all insecure requests",
+      "It forces all HTTP requests to be upgraded to HTTPS",
+      "It enables CORS",
+      "It disables mixed content warnings",
+    ],
+    answer: "It forces all HTTP requests to be upgraded to HTTPS",
+    explanation:
+      "`upgrade-insecure-requests` ensures all HTTP requests are upgraded to HTTPS, improving security.",
+    tags: ["network", "csp", "security"],
+  },
+  {
+    prompt: "What is the main performance benefit of using a CDN?",
+    options: [
+      "It compresses JS files",
+      "It improves DNS lookup speed",
+      "It serves static assets from edge locations closer to users",
+      "It disables CORS",
+    ],
+    answer: "It serves static assets from edge locations closer to users",
+    explanation:
+      "CDNs cache content at geographically distributed edge locations to reduce latency and improve load times.",
+    tags: ["hosting", "cdn", "performance"],
+  },
+  {
+    prompt: "What does ESLint's `eqeqeq` rule enforce?",
+    options: [
+      "It requires the use of triple equals `===` instead of `==` for comparisons",
+      "It requires constant variables to be used",
+      "It disables dynamic imports",
+      "It forces all functions to return values",
+    ],
+    answer:
+      "It requires the use of triple equals `===` instead of `==` for comparisons",
+    explanation:
+      "`eqeqeq` enforces strict equality `===` to avoid type coercion bugs.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "What is a common use of the `referrerpolicy` attribute in HTML?",
+    options: [
+      "To control which referrer information is sent with requests",
+      "To specify fallback fonts",
+      "To enable Service Workers",
+      "To enable subresource integrity",
+    ],
+    answer: "To control which referrer information is sent with requests",
+    explanation:
+      "`referrerpolicy` controls whether and how much referrer information is sent when making requests.",
+    tags: ["html", "attributes", "security"],
+  },
+  {
+    prompt: "In CSS, what does the `calc()` function enable?",
+    options: [
+      "It performs grid calculations",
+      "It allows dynamic calculations for property values",
+      "It centers flex items",
+      "It performs transitions",
+    ],
+    answer: "It allows dynamic calculations for property values",
+    explanation:
+      "`calc()` enables arithmetic operations in property values (e.g., `width: calc(100% - 50px)` ).",
+    tags: ["css", "layout", "responsive"],
+  },
+  {
+    prompt:
+      "In JavaScript, what happens if you call `JSON.stringify()` on a circular object?",
+    options: [
+      "It returns `null`",
+      "It throws an error",
+      "It returns an empty object",
+      "It serializes the object normally",
+    ],
+    answer: "It throws an error",
+    explanation:
+      "`JSON.stringify()` throws a `TypeError` when attempting to stringify circular references.",
+    tags: ["javascript", "json", "error-handling"],
+  },
+  {
+    prompt: "What does the TCP SYN flag do?",
+    options: [
+      "Terminates the connection",
+      "Initiates a new TCP connection",
+      "Acknowledges data receipt",
+      "Signals congestion",
+    ],
+    answer: "Initiates a new TCP connection",
+    explanation:
+      "The SYN flag is used in the first step of the TCP 3-way handshake to initiate a connection.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt: "In a CORS preflight request, which HTTP method is used?",
+    options: ["OPTIONS", "HEAD", "GET", "PATCH"],
+    answer: "OPTIONS",
+    explanation:
+      "CORS preflight requests use the `OPTIONS` method to determine whether the actual request is safe to send.",
+    tags: ["network", "cors"],
+  },
+  {
+    prompt: "What does Webpack’s `resolve.alias` option do?",
+    options: [
+      "It defines output file names",
+      "It resolves circular dependencies",
+      "It creates path aliases for easier imports",
+      "It enables dynamic imports",
+    ],
+    answer: "It creates path aliases for easier imports",
+    explanation:
+      "`resolve.alias` allows developers to define shorthand paths for modules.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What is a benefit of deploying static assets to a CDN?",
+    options: [
+      "Faster server-side rendering",
+      "Lower CPU usage on the origin server",
+      "Reduced latency by serving assets from edge locations",
+      "Automatic HTTPS upgrades",
+    ],
+    answer: "Reduced latency by serving assets from edge locations",
+    explanation:
+      "CDNs serve cached static assets from edge servers closer to users, reducing latency.",
+    tags: ["hosting", "cdn", "performance"],
+  },
+  {
+    prompt: "In ESLint, what does the `no-eval` rule do?",
+    options: [
+      "It disallows the use of the `eval()` function",
+      "It disallows function expressions",
+      "It forces arrow functions",
+      "It prevents function hoisting",
+    ],
+    answer: "It disallows the use of the `eval()` function",
+    explanation:
+      "`no-eval` disables the use of `eval()`, which is dangerous and can lead to security vulnerabilities.",
+    tags: ["tools", "eslint", "security"],
+  },
+  {
+    prompt: "What does the HTML `integrity` attribute do?",
+    options: [
+      "It enforces CORS rules",
+      "It verifies the fetched resource’s content against a known hash",
+      "It compresses static files",
+      "It prevents clickjacking",
+    ],
+    answer: "It verifies the fetched resource’s content against a known hash",
+    explanation:
+      "`integrity` is used with Subresource Integrity (SRI) to verify that a fetched resource matches a known hash.",
+    tags: ["html", "attributes", "security"],
+  },
+  {
+    prompt: "What is a characteristic of UDP compared to TCP?",
+    options: [
+      "Guaranteed packet delivery",
+      "Connection-oriented",
+      "Lower latency due to no handshake",
+      "Built-in encryption",
+    ],
+    answer: "Lower latency due to no handshake",
+    explanation:
+      "UDP is connectionless and has lower latency because it skips the connection handshake.",
+    tags: ["network", "udp"],
+  },
+  {
+    prompt: "What does the `window.performance.timing` API provide?",
+    options: [
+      "Data on JavaScript heap usage",
+      "Precise frame timings",
+      "Timestamps related to navigation and resource loading",
+      "GPU rendering statistics",
+    ],
+    answer: "Timestamps related to navigation and resource loading",
+    explanation:
+      "`window.performance.timing` provides timestamps for various stages of the page load process.",
+    tags: ["javascript", "performance", "browser"],
+  },
+  {
+    prompt:
+      'What is the effect of using `rel="noopener noreferrer"` on an anchor link?',
+    options: [
+      "Prevents referrer data from being sent and disables `window.opener` reference",
+      "Forces HTTPS usage",
+      "Prevents caching of linked resource",
+      "Applies lazy loading to the link",
+    ],
+    answer:
+      "Prevents referrer data from being sent and disables `window.opener` reference",
+    explanation:
+      '`rel="noopener noreferrer"` prevents security vulnerabilities like reverse tabnabbing and suppresses referrer info.',
+    tags: ["html", "attributes", "security"],
+  },
+  {
+    prompt: "What is the main benefit of using `font-display: swap` in CSS?",
+    options: [
+      "It forces all fonts to load asynchronously",
+      "It improves SEO",
+      "It prevents Flash of Invisible Text (FOIT) by showing fallback fonts immediately",
+      "It improves server-side rendering",
+    ],
+    answer:
+      "It prevents Flash of Invisible Text (FOIT) by showing fallback fonts immediately",
+    explanation:
+      "`font-display: swap` ensures that fallback fonts are shown immediately while custom fonts are loading.",
+    tags: ["css", "performance"],
+  },
+  {
+    prompt: "What does TCP flow control help with?",
+    options: [
+      "Guaranteeing encryption",
+      "Preventing the sender from overwhelming the receiver",
+      "Keeping connections alive during idle periods",
+      "Improving latency for DNS queries",
+    ],
+    answer: "Preventing the sender from overwhelming the receiver",
+    explanation:
+      "Flow control in TCP ensures that the sender does not send data faster than the receiver can process it.",
+    tags: ["network", "tcp"],
+  },
+  {
+    prompt:
+      "What does the `default-src 'self'` directive do in Content Security Policy?",
+    options: [
+      "Allows all resources to be loaded from any origin",
+      "Restricts all resources to only be loaded from the same origin",
+      "Blocks inline styles",
+      "Allows WebSockets from any domain",
+    ],
+    answer: "Restricts all resources to only be loaded from the same origin",
+    explanation:
+      "`default-src 'self'` limits resource loading to the same origin unless other directives override it.",
+    tags: ["network", "csp", "security"],
+  },
+  {
+    prompt: "In Webpack, what does `optimization.runtimeChunk` do?",
+    options: [
+      "Moves runtime boilerplate into a separate chunk",
+      "Disables tree shaking",
+      "Enables dynamic imports",
+      "Forces synchronous chunk loading",
+    ],
+    answer: "Moves runtime boilerplate into a separate chunk",
+    explanation:
+      "`optimization.runtimeChunk` separates Webpack runtime code into its own chunk to improve caching.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the `defer` attribute on a script tag do?",
+    options: [
+      "Executes the script as soon as it’s downloaded",
+      "Preloads the script but does not execute it",
+      "Defers script execution until after the HTML document is parsed",
+      "Disables script caching",
+    ],
+    answer: "Defers script execution until after the HTML document is parsed",
+    explanation:
+      "`defer` ensures that the script is executed after the DOM has been fully parsed.",
+    tags: ["html", "attributes", "performance"],
+  },
+  {
+    prompt: "In ESLint, what does the `no-console` rule typically enforce?",
+    options: [
+      "It prevents defining global variables",
+      "It prevents the use of `console.log()` in production code",
+      "It prevents declaring unused variables",
+      "It disables the use of dynamic imports",
+    ],
+    answer: "It prevents the use of `console.log()` in production code",
+    explanation:
+      "`no-console` prevents accidental `console.log()` calls from making it into production builds.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "What is the purpose of `max-age` in the Cache-Control header?",
+    options: [
+      "Defines the number of seconds a resource is considered fresh",
+      "Forces the resource to bypass caching",
+      "Preloads the resource into memory",
+      "Enables CORS for the resource",
+    ],
+    answer: "Defines the number of seconds a resource is considered fresh",
+    explanation:
+      "`max-age` controls how long a resource can be cached by the client before it is considered stale.",
+    tags: ["network", "performance"],
+  },
+  {
+    prompt: "What is a key characteristic of serverless compute models?",
+    options: [
+      "They require long-lived persistent connections",
+      "They scale automatically based on demand and are stateless",
+      "They always use dedicated VMs",
+      "They are limited to static websites only",
+    ],
+    answer: "They scale automatically based on demand and are stateless",
+    explanation:
+      "Serverless functions are stateless and automatically scale up or down based on demand.",
+    tags: ["hosting", "serverless"],
+  },
+  {
+    prompt: "What does the `window.devicePixelRatio` property indicate?",
+    options: [
+      "The screen’s refresh rate",
+      "The ratio of device pixels to CSS pixels",
+      "The total number of screen pixels",
+      "The amount of memory used by the DOM",
+    ],
+    answer: "The ratio of device pixels to CSS pixels",
+    explanation:
+      "`devicePixelRatio` indicates the ratio of physical device pixels to CSS pixels, important for rendering sharp graphics.",
+    tags: ["javascript", "performance", "browser"],
+  },
+  {
+    prompt: "What does `font-size: clamp(1rem, 2vw, 2rem)` accomplish?",
+    options: [
+      "It sets a fixed font size",
+      "It clamps the font size between 1rem and 2rem depending on viewport width",
+      "It disables font scaling",
+      "It prevents fallback fonts",
+    ],
+    answer:
+      "It clamps the font size between 1rem and 2rem depending on viewport width",
+    explanation:
+      "`clamp()` allows responsive scaling between min and max values based on viewport width.",
+    tags: ["css", "units", "responsive"],
+  },
+  {
+    prompt: "What is a characteristic of TCP slow start?",
+    options: [
+      "It sends data at maximum bandwidth initially",
+      "It sends one segment per second",
+      "It gradually increases transmission rate to avoid congestion",
+      "It disables packet loss detection",
+    ],
+    answer: "It gradually increases transmission rate to avoid congestion",
+    explanation:
+      "TCP slow start gradually ramps up transmission to probe available network capacity.",
+    tags: ["network", "tcp", "performance"],
+  },
+  {
+    prompt:
+      "What is the purpose of `Content-Security-Policy: frame-ancestors`?",
+    options: [
+      "It controls allowed iframe sources",
+      "It controls which sites can embed this page in a frame or iframe",
+      "It disables all iframes",
+      "It controls XSS filtering",
+    ],
+    answer: "It controls which sites can embed this page in a frame or iframe",
+    explanation:
+      "`frame-ancestors` restricts which parent origins are allowed to embed your content via iframe.",
+    tags: ["network", "csp", "security"],
+  },
+  {
+    prompt: "What does the `module` type on a `<script>` tag enable?",
+    options: [
+      "Automatic code minification",
+      "TypeScript support",
+      "ES6 module syntax and deferred loading",
+      "Legacy IE compatibility",
+    ],
+    answer: "ES6 module syntax and deferred loading",
+    explanation:
+      '`<script type="module">` enables ES6 module syntax and ensures deferred loading by default.',
+    tags: ["html", "attributes", "performance"],
+  },
+  {
+    prompt: "In Webpack, what does `externals` configuration do?",
+    options: [
+      "Bundles external CSS files",
+      "Marks dependencies to be excluded from the output bundle",
+      "Forces synchronous module resolution",
+      "Injects third-party scripts inline",
+    ],
+    answer: "Marks dependencies to be excluded from the output bundle",
+    explanation:
+      "`externals` tells Webpack not to bundle certain imports, expecting them to be available externally.",
+    tags: ["tools", "webpack", "build"],
+  },
+  {
+    prompt: "What does the ESLint `no-implicit-globals` rule enforce?",
+    options: [
+      "It disallows the use of `window` object",
+      "It prevents the declaration of variables in the global scope",
+      "It disables `eval()`",
+      "It forces ES modules only",
+    ],
+    answer: "It prevents the declaration of variables in the global scope",
+    explanation:
+      "`no-implicit-globals` ensures that variables are declared within proper scopes and not polluting global scope.",
+    tags: ["tools", "eslint"],
+  },
+  {
+    prompt: "What is the key difference between TCP and UDP?",
+    options: [
+      "UDP provides reliable delivery, TCP does not",
+      "TCP guarantees ordering and delivery, UDP does not",
+      "TCP supports only GET requests",
+      "UDP supports encryption natively",
+    ],
+    answer: "TCP guarantees ordering and delivery, UDP does not",
+    explanation:
+      "TCP provides reliable, ordered delivery with flow control; UDP is connectionless and unordered.",
+    tags: ["network", "tcp", "udp"],
+  },
+  {
+    prompt: "In Cache-Control, what does `no-store` indicate?",
+    options: [
+      "The resource can be cached for a short period",
+      "The resource must not be stored in any cache",
+      "The cache is shared across users",
+      "The cache is private",
+    ],
+    answer: "The resource must not be stored in any cache",
+    explanation:
+      "`no-store` ensures that the resource is not cached in any browser or intermediary cache.",
+    tags: ["network", "performance", "security"],
+  },
+  {
+    prompt: "What is a typical use case for serverless architecture?",
+    options: [
+      "Hosting a high-throughput database",
+      "Running a long-lived video transcoding job",
+      "Responding to event-based triggers (e.g., HTTP request or queue message)",
+      "Running a multi-tenant SaaS app with dedicated servers",
+    ],
+    answer:
+      "Responding to event-based triggers (e.g., HTTP request or queue message)",
+    explanation:
+      "Serverless functions are ideal for event-driven, stateless workloads such as API endpoints or background jobs.",
+    tags: ["hosting", "serverless"],
+  },
 ];

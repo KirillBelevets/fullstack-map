@@ -13,11 +13,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { faangFrontendProcess } from "./data/faangFrontendProcess";
+import { fintechFrontendProcess } from "./data/fintechFrontendProcess";
+import { remoteFrontendProcess } from "./data/remoteFrontendProcess";
 
 const templatesMap: Record<string, InterviewProcessTemplate> = {
   "Big Tech": bigTechFrontendProcess,
   Startup: startupFrontendProcess,
   "European Product Company": europeanFrontendProcess,
+  FAANG: faangFrontendProcess,
+  "FinTech Product": fintechFrontendProcess,
+  "Remote-First Company": remoteFrontendProcess,
 };
 
 export default function ProcessSelector() {

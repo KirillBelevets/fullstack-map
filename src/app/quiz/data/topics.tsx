@@ -6,22 +6,48 @@ export const topics = [
   {
     id: "html",
     label: "HTML",
-    tags: ["html"],
+    tags: [
+      "html",
+      "forms",
+      "seo",
+      "semantic",
+      "template",
+      "iframe",
+      "validation",
+      "meta",
+      "attributes",
+      "media",
+      "responsive",
+    ],
   },
   {
     id: "css",
     label: "CSS",
-    tags: ["css", "selectors", "box-model"],
+    tags: ["css", "selectors", "box-model", "responsive", "layout", "units"],
   },
   {
     id: "javascript",
     label: "JavaScript",
-    tags: ["js", "typescript", "es6", "hoisting", "closure", "javascript"],
+    tags: [
+      "js",
+      "typescript",
+      "es6",
+      "hoisting",
+      "closure",
+      "javascript",
+      "dom",
+      "json",
+      "debugging",
+      "async",
+      "variables",
+      "performance",
+      "error-handling",
+    ],
   },
   {
     id: "react",
     label: "React",
-    tags: ["react", "hooks", "jsx", "component"],
+    tags: ["react", "hooks", "jsx", "component", "performance"],
   },
   {
     id: "auth",
@@ -31,7 +57,7 @@ export const topics = [
   {
     id: "network",
     label: "Networking",
-    tags: ["http", "cors", "api"],
+    tags: ["http", "cors", "api", "dns", "tcp", "udp", "csp", "csrf", "status"],
   },
   {
     id: "docker",
@@ -42,6 +68,31 @@ export const topics = [
     id: "a11y",
     label: "Accessibility",
     tags: ["a11y", "accessibility"],
+  },
+  {
+    id: "git",
+    label: "Git",
+    tags: ["git"],
+  },
+  {
+    id: "browser",
+    label: "Browser",
+    tags: ["browser", "performance"],
+  },
+  {
+    id: "hosting",
+    label: "Hosting",
+    tags: ["hosting", "cdn", "serverless"],
+  },
+  {
+    id: "sql",
+    label: "SQL",
+    tags: ["sql", "database"],
+  },
+  {
+    id: "tools",
+    label: "Tools",
+    tags: ["tooling", "webpack", "npm", "eslint", "build"],
   },
 ];
 
