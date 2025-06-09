@@ -1,42 +1,34 @@
 "use client";
-
 import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
-  }, []);
+    const stored = localStorage.getItem("theme");
+    const isStoredDark = stored === "dark";
 
-  const toggleDarkMode = () => {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
-  };
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
+    setIsDark(isStoredDark);
+    if (isStoredDark) {
       document.documentElement.classList.add("dark");
-      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
+
+  const toggleTheme = () => {
+    const newDark = !isDark;
+    setIsDark(newDark);
+    localStorage.setItem("theme", newDark ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", newDark);
+  };
 
   return (
     <button
-      onClick={toggleDarkMode}
-      className="mb-6 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 dark:bg-yellow-400 dark:text-black"
+      onClick={toggleTheme}
+      className="mb-6 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
     >
-      {isDark ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      {isDark ? "🌞 Light Mode" : "🌙 Dark Mode"}
     </button>
   );
 }

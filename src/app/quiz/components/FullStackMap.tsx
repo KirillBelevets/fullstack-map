@@ -57,7 +57,6 @@ export default function FullStackMap() {
           );
         })}
       </div>
-
       <div className="mt-8 text-sm text-gray-400">
         <p>
           Your level: <strong className="capitalize">{level}</strong>
