@@ -39,8 +39,8 @@ export default function TopicLandingPage() {
         <Link
           href="/interview-visualizer"
           className="flex items-center justify-center px-6 py-3 rounded-full 
-      bg-purple-600 text-white font-semibold text-lg 
-      hover:bg-purple-500 shadow-md dark:shadow-purple-900 transition"
+    bg-purple-600 text-white font-semibold text-lg 
+    hover:bg-purple-500 shadow-md dark:shadow-purple-900 transition"
         >
           🚀 Interview Process Visualizer
         </Link>
@@ -48,11 +48,20 @@ export default function TopicLandingPage() {
         <button
           onClick={handleAllQuiz}
           className="flex items-center justify-center px-6 py-3 rounded-full 
-      bg-blue-600 text-white font-semibold text-lg 
-      hover:bg-blue-500 shadow-md dark:shadow-blue-900 transition"
+    bg-blue-600 text-white font-semibold text-lg 
+    hover:bg-blue-500 shadow-md dark:shadow-blue-900 transition"
         >
           🔁 Start Full Quiz
         </button>
+
+        <Link
+          href="/millionaire-mode"
+          className="flex items-center justify-center px-6 py-3 rounded-full 
+    bg-yellow-500 text-black font-semibold text-lg 
+    hover:bg-yellow-400 shadow-md dark:shadow-yellow-900 transition"
+        >
+          💰 Millionaire Mode
+        </Link>
       </div>
 
       <h1 className="text-2xl font-bold mb-4 sm:mb-6 text-black dark:text-white">
