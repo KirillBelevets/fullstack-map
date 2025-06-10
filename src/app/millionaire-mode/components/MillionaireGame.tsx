@@ -8,6 +8,8 @@ import MillionaireProgressBar from "./MillionaireProgressBar";
 import MillionaireQuestionCard from "./MillionaireQuestionCard";
 import MillionaireHints from "./MillionaireHints";
 import MillionaireTakeWinningsButton from "./MillionaireTakeWinningsButton";
+import { getLevelOffsets } from "../utils/quizUtils";
+import { useBestRun } from "../hooks/useBestRun"; // assuming you already extracted this hook
 
 type Question = {
   prompt: string;
@@ -56,21 +58,12 @@ export default function MillionaireGame() {
   const [gameWon, setGameWon] = useState(false);
   const [availableOptions, setAvailableOptions] = useState<string[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [bestRun, setBestRun] = useState<number>(0);
 
   const [remainingFiftyFifty, setRemainingFiftyFifty] = useState(3);
   const [usedFiftyFiftyOnCurrentQuestion, setUsedFiftyFiftyOnCurrentQuestion] =
     useState(false);
-  const [usedFiftyFiftyButtonHistory, setUsedFiftyFiftyButtonHistory] =
-    useState<Record<string, number | null>>({});
 
-  // Load best run from localStorage
-  useEffect(() => {
-    const storedBestRun = localStorage.getItem("millionaire_best_run");
-    if (storedBestRun) {
-      setBestRun(parseInt(storedBestRun));
-    }
-  }, []);
+  const { bestRun, updateBestRun } = useBestRun();
 
   // Shuffle questions per level
   useEffect(() => {
@@ -85,37 +78,17 @@ export default function MillionaireGame() {
     setUsedFiftyFiftyOnCurrentQuestion(false);
   }, [currentLevelIndex]);
 
-  useEffect(() => {
-    const currentKey = `${currentLevelIndex}-${currentQuestionIndex}`;
-    const buttonIndex = usedFiftyFiftyButtonHistory[currentKey];
-
-    if (buttonIndex !== undefined && buttonIndex !== null) {
-      setUsedFiftyFiftyOnCurrentQuestion(true);
-    } else {
-      setUsedFiftyFiftyOnCurrentQuestion(false);
-    }
-  }, [currentLevelIndex, currentQuestionIndex, usedFiftyFiftyButtonHistory]);
-
-  // Helper: Update best run
-  const updateBestRun = (finalScore: number) => {
-    if (finalScore > bestRun) {
-      localStorage.setItem("millionaire_best_run", finalScore.toString());
-      setBestRun(finalScore);
-    }
-  };
-
-  // Handler: Answer click
+  // Handle Answer click
   const handleAnswer = (option: string) => {
-    if (selectedAnswer) return;
+    if (selectedAnswer) return; // prevent double click
     setSelectedAnswer(option);
 
     const correct = option === shuffledQuestions[currentQuestionIndex].answer;
     setIsAnswerCorrect(correct);
     setShowFeedback(true);
 
-    const levelOffsets = QUESTIONS_PER_LEVEL.map((_, index) =>
-      QUESTIONS_PER_LEVEL.slice(0, index).reduce((a, b) => a + b, 0)
-    );
+    const levelOffsets = getLevelOffsets(QUESTIONS_PER_LEVEL);
+
     const currentPrizeIndex =
       levelOffsets[currentLevelIndex] + currentQuestionIndex;
     const newScore = PRIZES[currentPrizeIndex];
@@ -159,11 +132,12 @@ export default function MillionaireGame() {
   };
 
   // Handler: 50-50 click
-  const handleFiftyFifty = (buttonIdx: number) => {
+  const handleFiftyFifty = () => {
     if (
       remainingFiftyFifty <= 0 ||
       usedFiftyFiftyOnCurrentQuestion ||
-      availableOptions.length <= 2
+      availableOptions.length <= 2 ||
+      selectedAnswer // Lock when already answered
     )
       return;
 
@@ -183,12 +157,9 @@ export default function MillionaireGame() {
     setAvailableOptions(reducedOptions);
     setRemainingFiftyFifty((prev) => prev - 1);
     setUsedFiftyFiftyOnCurrentQuestion(true);
-    setUsedFiftyFiftyButtonHistory((prev) => ({
-      ...prev,
-      [`${currentLevelIndex}-${currentQuestionIndex}`]: buttonIdx,
-    }));
   };
 
+  // Game Over screen
   if (gameOver) {
     return (
       <div className="p-4 text-center">
@@ -205,7 +176,7 @@ export default function MillionaireGame() {
     );
   }
 
-  // Render if Game Won
+  // Game Won screen
   if (gameWon) {
     return (
       <div className="p-4 text-center">
@@ -224,20 +195,14 @@ export default function MillionaireGame() {
     );
   }
 
-  // In progress game
+  // In-progress game
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
   if (!currentQuestion) return <p>Loading questions...</p>;
 
-  const levelOffsets = QUESTIONS_PER_LEVEL.map((_, index) =>
-    QUESTIONS_PER_LEVEL.slice(0, index).reduce((a, b) => a + b, 0)
-  );
+  const levelOffsets = getLevelOffsets(QUESTIONS_PER_LEVEL);
+
   const currentPrizeIndex =
     levelOffsets[currentLevelIndex] + currentQuestionIndex;
-
-  const currentFiftyFiftyButtonIndex =
-    usedFiftyFiftyButtonHistory[
-      `${currentLevelIndex}-${currentQuestionIndex}`
-    ] ?? null;
 
   return (
     <div className="flex flex-col md:flex-row p-4 max-w-5xl mx-auto space-y-6 md:space-x-8 md:space-y-0">
@@ -272,9 +237,8 @@ export default function MillionaireGame() {
         {/* Lifelines */}
         <MillionaireHints
           remainingFiftyFifty={remainingFiftyFifty}
-          usedFiftyFiftyOnCurrentQuestion={usedFiftyFiftyOnCurrentQuestion}
-          usedFiftyFiftyButtonIndex={currentFiftyFiftyButtonIndex}
           onFiftyFifty={handleFiftyFifty}
+          isLocked={!!selectedAnswer}
         />
 
         {/* Take Winnings */}

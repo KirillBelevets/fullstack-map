@@ -1,54 +1,47 @@
 "use client";
 
 import React from "react";
+import { Progress } from "@/components/ui/progress";
 
 type MillionaireHintsProps = {
   remainingFiftyFifty: number;
-  usedFiftyFiftyOnCurrentQuestion: boolean;
-  usedFiftyFiftyButtonIndex: number | null;
-  onFiftyFifty: (buttonIndex: number) => void;
+  onFiftyFifty: () => void;
+  isLocked: boolean;
 };
 
 export default function MillionaireHints({
   remainingFiftyFifty,
-  usedFiftyFiftyOnCurrentQuestion,
-  usedFiftyFiftyButtonIndex,
   onFiftyFifty,
+  isLocked,
 }: MillionaireHintsProps) {
+  const maxFiftyFifty = 3;
+
+  const isDisabled = remainingFiftyFifty <= 0 || isLocked;
+
+  // Calculate % for progress bar
+  const progressValue = (remainingFiftyFifty / maxFiftyFifty) * 100;
+
   return (
-    <div className="flex flex-col items-start mb-6 space-y-2">
-      <h4 className="font-semibold mb-1">Lifelines:</h4>
-      <div className="flex space-x-2">
-        {[0, 1, 2].map((idx) => {
-          const isUsed = remainingFiftyFifty <= idx;
-          const isActive = usedFiftyFiftyButtonIndex === idx;
+    <div className="flex flex-col items-start mb-6 space-y-3 w-full max-w-xs">
+      <h4 className="font-semibold">Lifelines:</h4>
 
-          const isDisabled =
-            isUsed || (usedFiftyFiftyOnCurrentQuestion && !isActive);
+      <button
+        onClick={onFiftyFifty}
+        disabled={isDisabled}
+        className={`w-full px-4 py-2 rounded text-white font-semibold transition
+          ${
+            isDisabled
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-400"
+          }`}
+      >
+        50:50 ({remainingFiftyFifty} remaining)
+      </button>
 
-          return (
-            <button
-              key={idx}
-              onClick={() => onFiftyFifty(idx)}
-              disabled={isDisabled}
-              className={`px-4 py-2 rounded text-white font-semibold transition
-                ${
-                  isUsed
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : isActive
-                    ? "bg-green-500 cursor-not-allowed"
-                    : usedFiftyFiftyOnCurrentQuestion
-                    ? "bg-blue-200 cursor-not-allowed"
-                    : "bg-blue-500 hover:bg-blue-400"
-                }`}
-            >
-              50:50
-            </button>
-          );
-        })}
-      </div>
-      <p className="text-sm text-gray-500 mt-1">
-        You have {remainingFiftyFifty} remaining.
+      <Progress value={progressValue} className="h-2" />
+
+      <p className="text-sm text-gray-500">
+        You can use 50:50 up to {maxFiftyFifty} times per game.
       </p>
     </div>
   );
