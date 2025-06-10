@@ -38,7 +38,9 @@ const PRIZES = [
   32000,
   64000,
   125000,
-  250000, // Advanced
+  250000,
+  500000,
+  1000000, // Advanced
 ];
 
 export default function MillionaireGame() {
@@ -50,13 +52,10 @@ export default function MillionaireGame() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
-  const [lifelines, setLifelines] = useState({
-    fiftyFiftyUsed: false,
-    probabilityUsed: false,
-  });
   const [availableOptions, setAvailableOptions] = useState<string[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [bestRun, setBestRun] = useState<number>(0);
+  const [remainingFiftyFifty, setRemainingFiftyFifty] = useState(3);
 
   useEffect(() => {
     const storedBestRun = localStorage.getItem("millionaire_best_run");
@@ -106,7 +105,7 @@ export default function MillionaireGame() {
         } else if (currentLevelIndex + 1 < LEVELS.length) {
           setCurrentLevelIndex((prev) => prev + 1);
         } else {
-          updateBestRun(newScore); // FIXED here → pass correct score
+          updateBestRun(newScore);
           setGameWon(true);
         }
       }, 2000);
@@ -124,7 +123,7 @@ export default function MillionaireGame() {
   };
 
   const handleFiftyFifty = () => {
-    if (lifelines.fiftyFiftyUsed) return;
+    if (remainingFiftyFifty <= 0) return;
 
     const question = shuffledQuestions[currentQuestionIndex];
     const correctAnswer = question.answer;
@@ -141,26 +140,7 @@ export default function MillionaireGame() {
     );
 
     setAvailableOptions(reducedOptions);
-    setLifelines((prev) => ({ ...prev, fiftyFiftyUsed: true }));
-  };
-
-  const handleProbabilityHint = () => {
-    if (lifelines.probabilityUsed) return;
-
-    const correctAnswer = shuffledQuestions[currentQuestionIndex].answer;
-    const options = shuffledQuestions[currentQuestionIndex].options;
-
-    const probs = options.map((opt) => {
-      if (opt === correctAnswer) return 70;
-      return Math.floor(Math.random() * 20);
-    });
-
-    alert(
-      "Probability Hint:\n" +
-        options.map((opt, idx) => `${opt}: ${probs[idx]}%`).join("\n")
-    );
-
-    setLifelines((prev) => ({ ...prev, probabilityUsed: true }));
+    setRemainingFiftyFifty((prev) => prev - 1);
   };
 
   if (gameOver) {
@@ -231,10 +211,8 @@ export default function MillionaireGame() {
 
         {/* Lifelines */}
         <MillionaireHints
-          fiftyFiftyUsed={lifelines.fiftyFiftyUsed}
-          probabilityUsed={lifelines.probabilityUsed}
+          remainingFiftyFifty={remainingFiftyFifty}
           onFiftyFifty={handleFiftyFifty}
-          onProbabilityHint={handleProbabilityHint}
         />
 
         {/* Take Winnings */}
