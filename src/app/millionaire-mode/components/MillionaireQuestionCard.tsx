@@ -1,8 +1,12 @@
-import { Question } from "@/app/quiz/data/fsTypes";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 type Props = {
-  question: Question;
-  availableOptions: string[];
+  prompt: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
   selectedAnswer: string | null;
   isAnswerCorrect: boolean | null;
   showFeedback: boolean;
@@ -10,37 +14,59 @@ type Props = {
 };
 
 export default function MillionaireQuestionCard({
-  question,
-  availableOptions,
+  prompt,
+  options,
+  correctAnswer,
+  explanation,
   selectedAnswer,
   isAnswerCorrect,
   showFeedback,
   onAnswer,
 }: Props) {
+  const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
+
+  useEffect(() => {
+    const shuffled = [...options].sort(() => Math.random() - 0.5);
+    setShuffledOptions(shuffled);
+  }, [options]);
+
   return (
     <div>
-      <p className="font-semibold mb-4 text-lg">{question.prompt}</p>
-      {availableOptions.map((option) => (
+      <p className="font-semibold mb-4 text-lg">{prompt}</p>
+      {shuffledOptions.map((option) => (
         <button
           key={option}
-          className={`block w-full text-left p-3 border mb-3 rounded text-lg transition text-gray-800 ${
-            selectedAnswer
-              ? option === question.answer
-                ? "bg-green-300"
-                : option === selectedAnswer
-                ? "bg-red-300"
-                : "opacity-50 bg-white"
-              : "bg-white hover:bg-gray-100"
-          }`}
           onClick={() => onAnswer(option)}
           disabled={!!selectedAnswer}
+          className={`block w-full text-left p-3 border mb-3 rounded text-lg transition text-gray-800
+            ${
+              selectedAnswer
+                ? option === correctAnswer
+                  ? "bg-green-300"
+                  : option === selectedAnswer
+                  ? "bg-red-300"
+                  : "opacity-50 bg-white"
+                : "bg-white hover:bg-gray-100"
+            }`}
         >
           {option}
         </button>
       ))}
 
       {showFeedback && isAnswerCorrect !== null && (
-        <p className={`...`}>{isAnswerCorrect ? "Correct!" : "Incorrect!"}</p>
+        <p
+          className={`mt-4 font-semibold text-lg ${
+            isAnswerCorrect ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {isAnswerCorrect
+            ? "✅ Correct!"
+            : `❌ Incorrect. Correct answer: ${correctAnswer}`}
+        </p>
+      )}
+
+      {showFeedback && !isAnswerCorrect && explanation && (
+        <p className="mt-2 text-gray-700 text-sm">{explanation}</p>
       )}
     </div>
   );
