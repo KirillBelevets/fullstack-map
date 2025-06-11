@@ -6,7 +6,6 @@ type Props = {
   prompt: string;
   options: string[];
   correctAnswer: string;
-  explanation: string;
   selectedAnswer: string | null;
   isAnswerCorrect: boolean | null;
   showFeedback: boolean;
@@ -17,7 +16,6 @@ export default function MillionaireQuestionCard({
   prompt,
   options,
   correctAnswer,
-  explanation,
   selectedAnswer,
   isAnswerCorrect,
   showFeedback,
@@ -63,10 +61,6 @@ export default function MillionaireQuestionCard({
             ? "✅ Correct!"
             : `❌ Incorrect. Correct answer: ${correctAnswer}`}
         </p>
-      )}
-
-      {showFeedback && !isAnswerCorrect && explanation && (
-        <p className="mt-2 text-gray-700 text-sm">{explanation}</p>
       )}
     </div>
   );

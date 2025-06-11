@@ -846,13 +846,6 @@ export const questionsBeginner: Question[] = [
     tags: ["html"],
   },
   {
-    prompt: "Which property changes the text color in CSS?",
-    options: ["font", "text", "color", "background"],
-    answer: "color",
-    explanation: "The `color` property sets the text color in CSS.",
-    tags: ["css"],
-  },
-  {
     prompt: "Which of the following is a valid CSS selector for an ID?",
     options: ["#my-id", ".my-id", "my-id", "@my-id"],
     answer: "#my-id",

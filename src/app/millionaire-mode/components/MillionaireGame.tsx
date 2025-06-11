@@ -159,23 +159,6 @@ export default function MillionaireGame() {
     setUsedFiftyFiftyOnCurrentQuestion(true);
   };
 
-  // Game Over screen
-  if (gameOver) {
-    return (
-      <div className="p-4 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-red-600">Game Over!</h1>
-        <p className="mb-4 text-xl">You won: ${score}</p>
-        <p className="text-md text-gray-600 mt-2">🏅 Best Run: ${bestRun}</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded font-semibold hover:bg-blue-400 transition"
-        >
-          🔄 Play Again
-        </button>
-      </div>
-    );
-  }
-
   // Game Won screen
   if (gameWon) {
     return (
@@ -204,6 +187,30 @@ export default function MillionaireGame() {
   const currentPrizeIndex =
     levelOffsets[currentLevelIndex] + currentQuestionIndex;
 
+  // Game Over screen
+  if (gameOver) {
+    return (
+      <div className="p-4 text-center">
+        <h1 className="text-4xl font-bold mb-4 text-red-600">Game Over!</h1>
+        <p className="mb-4 text-xl">You won: ${score}</p>
+        <p className="text-md text-gray-600 mt-2">🏅 Best Run: ${bestRun}</p>
+
+        <p className="mt-6 text-lg font-semibold">The correct answer was:</p>
+        <p className="text-xl mb-2">{currentQuestion.answer}</p>
+
+        <p className="mt-4 text-lg font-semibold">Explanation:</p>
+        <p className="text-md text-gray-700">{currentQuestion.explanation}</p>
+
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-6 px-4 py-2 bg-blue-500 text-white rounded font-semibold hover:bg-blue-400 transition"
+        >
+          🔄 Play Again
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col md:flex-row p-4 max-w-5xl mx-auto space-y-6 md:space-x-8 md:space-y-0">
       {/* Progress Ladder */}
@@ -227,7 +234,6 @@ export default function MillionaireGame() {
           prompt={currentQuestion.prompt}
           options={availableOptions}
           correctAnswer={currentQuestion.answer}
-          explanation={currentQuestion.explanation}
           selectedAnswer={selectedAnswer}
           isAnswerCorrect={isAnswerCorrect}
           showFeedback={showFeedback}
