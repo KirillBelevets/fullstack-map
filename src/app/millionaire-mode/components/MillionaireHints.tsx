@@ -15,33 +15,34 @@ export default function MillionaireHints({
   isLocked,
 }: MillionaireHintsProps) {
   const maxFiftyFifty = 3;
-
   const isDisabled = remainingFiftyFifty <= 0 || isLocked;
-
-  // Calculate % for progress bar
   const progressValue = (remainingFiftyFifty / maxFiftyFifty) * 100;
 
   return (
-    <div className="flex flex-col items-start mb-6 space-y-3 w-full max-w-xs">
-      <h4 className="font-semibold">Lifelines:</h4>
+    <div className="w-full mt-6 text-center">
+      <h4 className="text-lg font-bold text-white mb-2 drop-shadow">
+        🎓 Lifelines
+      </h4>
 
       <button
         onClick={onFiftyFifty}
         disabled={isDisabled}
-        className={`w-full px-4 py-2 rounded text-white font-semibold transition
+        className={`w-48 px-4 py-2 rounded-xl font-semibold transition shadow-md text-white
           ${
             isDisabled
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-500 hover:bg-blue-400"
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-500"
           }`}
       >
-        50:50 ({remainingFiftyFifty} remaining)
+        50:50 Lifeline ({remainingFiftyFifty} left)
       </button>
 
-      <Progress value={progressValue} className="h-2" />
+      <div className="w-48 mx-auto mt-2">
+        <Progress value={progressValue} className="h-2 bg-white/10" />
+      </div>
 
-      <p className="text-sm text-gray-500">
-        You can use 50:50 up to {maxFiftyFifty} times per game.
+      <p className="text-sm text-gray-300 mt-1">
+        Max: {maxFiftyFifty} uses per game
       </p>
     </div>
   );

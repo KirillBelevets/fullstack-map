@@ -23,45 +23,50 @@ export default function MillionaireQuestionCard({
 }: Props) {
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
 
+  console.log({ isAnswerCorrect });
+  console.log({ showFeedback });
+
   useEffect(() => {
     const shuffled = [...options].sort(() => Math.random() - 0.5);
     setShuffledOptions(shuffled);
   }, [options]);
 
   return (
-    <div>
-      <p className="font-semibold mb-4 text-lg">{prompt}</p>
-      {shuffledOptions.map((option) => (
-        <button
-          key={option}
-          onClick={() => onAnswer(option)}
-          disabled={!!selectedAnswer}
-          className={`block w-full text-left p-3 border mb-3 rounded text-lg transition text-gray-800
-            ${
-              selectedAnswer
-                ? option === correctAnswer
-                  ? "bg-green-300"
-                  : option === selectedAnswer
-                  ? "bg-red-300"
-                  : "opacity-50 bg-white"
-                : "bg-white hover:bg-gray-100"
-            }`}
-        >
-          {option}
-        </button>
-      ))}
+    <div className="text-white">
+      {/* Styled question box */}
+      <div className="bg-blue-800 border-2 border-blue-500 text-white text-lg font-semibold p-5 rounded-xl text-center mb-6">
+        {prompt}
+      </div>
 
-      {showFeedback && isAnswerCorrect !== null && (
-        <p
-          className={`mt-4 font-semibold text-lg ${
-            isAnswerCorrect ? "text-green-600" : "text-red-600"
-          }`}
-        >
-          {isAnswerCorrect
-            ? "✅ Correct!"
-            : `❌ Incorrect. Correct answer: ${correctAnswer}`}
-        </p>
-      )}
+      {/* Options styled like TV buttons */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {shuffledOptions.map((option, idx) => {
+          let bgColor = "bg-blue-700 hover:bg-blue-600";
+          let disabled = false;
+
+          if (selectedAnswer) {
+            disabled = true;
+            if (option === correctAnswer) {
+              bgColor = "bg-green-600";
+            } else if (option === selectedAnswer) {
+              bgColor = "bg-red-600";
+            } else {
+              bgColor = "bg-orange-500";
+            }
+          }
+
+          return (
+            <button
+              key={`${option}-${idx}`}
+              className={`relative w-full py-4 px-6 text-white text-lg font-semibold transition border-2 rounded-xl ${bgColor}`}
+              disabled={disabled}
+              onClick={() => onAnswer(option)}
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

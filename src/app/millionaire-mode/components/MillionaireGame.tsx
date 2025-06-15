@@ -47,6 +47,13 @@ const PRIZES = [
   1000000, // Advanced
 ];
 
+const SAFE_ZONE_INDEXES = [4, 9, 14]; // $500, $8000, $250000
+
+function getLastSafePrize(currentIndex: number): number {
+  const safeIndex = SAFE_ZONE_INDEXES.filter((i) => i <= currentIndex).pop();
+  return safeIndex !== undefined ? PRIZES[safeIndex] : 0;
+}
+
 export default function MillionaireGame() {
   const [currentLevelIndex, setCurrentLevelIndex] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -119,7 +126,9 @@ export default function MillionaireGame() {
       }, 2000);
     } else {
       setTimeout(() => {
-        updateBestRun(score);
+        const safePrize = getLastSafePrize(currentPrizeIndex);
+        setScore(safePrize);
+        updateBestRun(safePrize);
         setGameOver(true);
       }, 2000);
     }
@@ -190,20 +199,35 @@ export default function MillionaireGame() {
   // Game Over screen
   if (gameOver) {
     return (
-      <div className="p-4 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-red-600">Game Over!</h1>
-        <p className="mb-4 text-xl">You won: ${score}</p>
-        <p className="text-md text-gray-600 mt-2">🏅 Best Run: ${bestRun}</p>
+      <div className="p-6 max-w-3xl mx-auto text-center text-white">
+        <h1 className="text-4xl font-bold text-red-500 mb-6 drop-shadow">
+          Game Over!
+        </h1>
 
-        <p className="mt-6 text-lg font-semibold">The correct answer was:</p>
-        <p className="text-xl mb-2">{currentQuestion.answer}</p>
+        {/* Prize won */}
+        <div className="bg-yellow-600 border-4 border-yellow-400 rounded-xl py-4 px-6 text-2xl font-bold mb-4 shadow-lg">
+          🪙 You won: ${score}
+        </div>
 
-        <p className="mt-4 text-lg font-semibold">Explanation:</p>
-        <p className="text-md text-gray-700">{currentQuestion.explanation}</p>
+        {/* Best Run */}
+        <p className="text-md text-gray-300 mb-6">🏅 Best Run: ${bestRun}</p>
 
+        {/* Correct answer */}
+        <div className="bg-green-700 border-2 border-green-500 rounded-xl py-4 px-6 mb-4 shadow">
+          <p className="text-lg font-semibold mb-1">Correct Answer:</p>
+          <p className="text-xl">{currentQuestion.answer}</p>
+        </div>
+
+        {/* Explanation */}
+        <div className="bg-blue-700 border-2 border-blue-500 rounded-xl py-4 px-6 shadow">
+          <p className="text-lg font-semibold mb-1">💡 Explanation:</p>
+          <p className="text-md text-gray-100">{currentQuestion.explanation}</p>
+        </div>
+
+        {/* Play Again */}
         <button
           onClick={() => window.location.reload()}
-          className="mt-6 px-4 py-2 bg-blue-500 text-white rounded font-semibold hover:bg-blue-400 transition"
+          className="mt-8 inline-block bg-orange-600 hover:bg-orange-500 transition text-white font-semibold text-lg py-3 px-6 rounded-xl shadow-md"
         >
           🔄 Play Again
         </button>
@@ -229,6 +253,11 @@ export default function MillionaireGame() {
         </h2>
         <h3 className="text-lg mb-4">Prize: ${PRIZES[currentPrizeIndex]}</h3>
 
+        {/* Risk vs Safe */}
+        <p className="text-sm text-gray-400 mb-4">
+          💰 Risking ${score} → Safe: ${getLastSafePrize(currentPrizeIndex)}
+        </p>
+
         {/* Question Card */}
         <MillionaireQuestionCard
           prompt={currentQuestion.prompt}
@@ -247,9 +276,9 @@ export default function MillionaireGame() {
           isLocked={!!selectedAnswer}
         />
 
-        {/* Take Winnings */}
         <MillionaireTakeWinningsButton
           winnings={score}
+          safePrize={getLastSafePrize(currentPrizeIndex)}
           onTakeWinnings={handleTakeWinnings}
         />
       </div>
